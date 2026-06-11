@@ -48,13 +48,6 @@
       color: var(--text-dark);
     }
 
-    body.dark .card,
-    body.dark .stat,
-    body.dark .project {
-      background: #1e1e1e;
-      color: var(--text-dark);
-    }
-
     .container {
       max-width: 1000px;
       margin: auto;
@@ -137,6 +130,10 @@
       animation: fadeUp 0.6s forwards;
     }
 
+    .card.gradient1 { background: linear-gradient(to right, #ff7e5f, #feb47b); }
+    .card.gradient2 { background: linear-gradient(to right, #6a11cb, #2575fc); }
+    .card.gradient3 { background: linear-gradient(to right, #43cea2, #185a9d); }
+
     h2 {
       color: var(--red);
       margin-bottom: 10px;
@@ -202,6 +199,14 @@
       font-size: 0.9em;
     }
 
+    /* DARK MODE */
+    body.dark .card,
+    body.dark .stat,
+    body.dark .project {
+      background: #1e1e1e !important;
+      color: var(--text-dark);
+    }
+
     /* ANIMATIONS */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
@@ -220,7 +225,7 @@
 </head>
 <body>
 
-<button class="btn" onclick="toggleDark()">🌙</button>
+<button class="btn" onclick="toggleMode()">🌙 / 🌈</button>
 
 <div class="container">
 
@@ -277,9 +282,24 @@
 <script>
 const user = "Shigosag";
 
-/* DARK MODE TOGGLE */
-function toggleDark() {
-  document.body.classList.toggle('dark');
+/* MULTI-MODE TOGGLE */
+let mode = 0; // 0=default, 1=dark, 2=gradient
+function toggleMode() {
+  mode = (mode + 1) % 3;
+  document.body.classList.remove('dark');
+  document.querySelectorAll('.card').forEach((c,i)=>{
+    c.classList.remove('gradient1','gradient2','gradient3');
+  });
+
+  if(mode === 1) {
+    document.body.classList.add('dark');
+  } else if(mode === 2) {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach((c,i)=>{
+      const g = ['gradient1','gradient2','gradient3'];
+      c.classList.add(g[i % g.length]);
+    });
+  }
 }
 
 /* Fetch GitHub Stats */
