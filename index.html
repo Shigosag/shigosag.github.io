@@ -327,7 +327,7 @@ fetch(`https://api.github.com/users/${user}`)
 });
 
 /* Fetch Repos for Projects */
-fetch(`https://api.github.com/users/${user}/repos`)
+fetch(`https://api.github.com/users/${user}/starred`)
 .then(res=>res.json())
 .then(data=>{
   const box = document.getElementById("projects");
