@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Developer portfolio showcasing projects, skills, and software solutions." />
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Developer portfolio showcasing GitHub projects, skills, and software solutions." />
   <meta property="og:title" content="Shigosag | Developer Portfolio" />
-  <meta property="og:description" content="Portfolio of Segun Arulogun Gabriel | Full-Stack Developer" />
+  <meta property="og:description" content="Full-Stack Developer Portfolio - GitHub Projects & Skills" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shigosag.github.io" />
   <meta property="og:image" content="https://via.placeholder.com/1200x630" />
@@ -14,11 +14,9 @@
   <style>
     :root {
       --red: #d80000;
-      --dark: #111;
-      --gray: #666;
       --bg: #f7f7f7;
-      --bg-dark: #121212;
-      --text-dark: #eee;
+      --dark: #111;
+      --card: #fff;
     }
 
     * {
@@ -26,34 +24,22 @@
       padding: 0;
       box-sizing: border-box;
       font-family: Arial, sans-serif;
-      transition: all 0.3s ease;
     }
 
     body {
       background: var(--bg);
       color: var(--dark);
-    }
-
-    .dark-mode {
-      background: var(--bg-dark);
-      color: var(--text-dark);
+      padding: 20px;
     }
 
     .container {
       max-width: 1000px;
       margin: auto;
-      padding: 20px;
     }
 
     header {
       text-align: center;
-      padding: 30px 20px;
-    }
-
-    header img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
+      margin-bottom: 20px;
     }
 
     header h1 {
@@ -62,19 +48,23 @@
     }
 
     header p {
-      color: var(--gray);
+      color: #666;
     }
 
-    .toggle-btn {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      padding: 8px 12px;
-      background: var(--red);
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
+    /* STATS */
+    .stats {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      background: var(--card);
+      padding: 10px 15px;
+      border-radius: 10px;
+      border-left: 4px solid var(--red);
     }
 
     /* GRID */
@@ -82,19 +72,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 15px;
-      margin-top: 20px;
     }
 
     .card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      background: var(--card);
+      padding: 15px;
+      border-radius: 10px;
       border-left: 4px solid var(--red);
-    }
-
-    .dark-mode .card {
-      background: #1e1e1e;
     }
 
     h2 {
@@ -102,149 +86,105 @@
       margin-bottom: 10px;
     }
 
-    ul {
-      list-style: none;
+    /* PROJECTS */
+    .projects {
+      margin-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
     }
 
-    ul li {
-      margin-bottom: 8px;
+    .project {
+      background: var(--card);
+      padding: 15px;
+      border-radius: 10px;
+      border-left: 4px solid var(--red);
+      transition: 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-5px);
     }
 
     a {
       color: var(--red);
       text-decoration: none;
     }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* PROJECT CARDS */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 15px;
-      margin-top: 15px;
-    }
-
-    .project-card {
-      background: #fff;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .dark-mode .project-card {
-      background: #1e1e1e;
-    }
-
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 160px;
-      object-fit: cover;
-    }
-
-    .project-content {
-      padding: 15px;
-    }
-
-    .project-content h3 {
-      color: var(--red);
-      margin-bottom: 5px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      color: var(--gray);
-      font-size: 0.9em;
-    }
   </style>
 </head>
 
 <body>
 
-<button class="toggle-btn" onclick="toggleDark()">🌙 Dark Mode</button>
-
 <div class="container">
 
   <header>
-    <img src="https://via.placeholder.com/80" alt="Logo" />
     <h1>Shigosag</h1>
     <p>Segun Arulogun Gabriel • Full-Stack Developer</p>
   </header>
 
-  <!-- ABOUT / SKILLS -->
-  <div class="grid">
+  <!-- GITHUB STATS -->
+  <div class="stats">
+    <div class="stat">⭐ Repos: Loading...</div>
+    <div class="stat">📦 Followers: Loading...</div>
+    <div class="stat">💻 Public Projects</div>
+  </div>
 
+  <!-- ABOUT -->
+  <div class="grid">
     <div class="card">
-      <h2>👋 About Me</h2>
-      <p>Full-stack developer building scalable web apps and modern software solutions.</p>
+      <h2>👋 About</h2>
+      <p>Full-stack developer building scalable web & software systems.</p>
     </div>
 
     <div class="card">
       <h2>💻 Skills</h2>
-      <ul>
-        <li>React / TypeScript</li>
-        <li>Node.js / Express</li>
-        <li>PostgreSQL / MongoDB</li>
-        <li>Python / FastAPI</li>
-      </ul>
+      <p>React, Node.js, Express, PostgreSQL, Python, FastAPI</p>
     </div>
 
     <div class="card">
-      <h2>🌐 Connect</h2>
-      <ul>
-        <li><a href="#">LinkedIn</a></li>
-        <li><a href="#">Medium</a></li>
-        <li><a href="#">Wikialpha</a></li>
-        <li><a href="https://github.com/Shigosag">GitHub</a></li>
-      </ul>
+      <h2>🌐 Links</h2>
+      <p>
+        <a href="https://github.com/Shigosag">GitHub</a> •
+        <a href="#">LinkedIn</a> •
+        <a href="#">Medium</a>
+      </p>
     </div>
-
   </div>
 
-  <!-- PROJECTS -->
-  <h2 style="margin-top:30px;">🚀 Projects</h2>
-
-  <div class="projects">
-
-    <div class="project-card">
-      <img src="https://via.placeholder.com/400x200" alt="Project 1" />
-      <div class="project-content">
-        <h3>Business Management System</h3>
-        <p>Full-stack system for managing business operations.</p>
-        <a href="https://github.com/Shigosag">View Project</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <img src="https://via.placeholder.com/400x200" alt="Project 2" />
-      <div class="project-content">
-        <h3>POS System</h3>
-        <p>Modern point-of-sale system with real-time tracking.</p>
-        <a href="#">View Project</a>
-      </div>
-    </div>
-
-  </div>
-
-  <footer>
-    © 2026 Shigosag | Built with GitHub Pages
-  </footer>
+  <!-- PROJECTS (AUTO FETCH) -->
+  <h2 style="margin-top:25px;">🚀 GitHub Projects</h2>
+  <div class="projects" id="projects"></div>
 
 </div>
 
 <script>
-function toggleDark() {
-  document.body.classList.toggle('dark-mode');
-}
+const username = "Shigosag";
+
+/* FETCH GITHUB REPOS */
+fetch(`https://api.github.com/users/${username}/repos`)
+  .then(res => res.json())
+  .then(data => {
+    const container = document.getElementById("projects");
+
+    data.slice(0, 6).forEach(repo => {
+      const div = document.createElement("div");
+      div.className = "project";
+      div.innerHTML = `
+        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+        <p>${repo.description || "No description available"}</p>
+        ⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}
+      `;
+      container.appendChild(div);
+    });
+  });
+
+/* SIMPLE STATS */
+fetch(`https://api.github.com/users/${username}`)
+  .then(res => res.json())
+  .then(user => {
+    document.querySelectorAll(".stat")[0].innerText = "📦 Repos: " + user.public_repos;
+    document.querySelectorAll(".stat")[1].innerText = "👥 Followers: " + user.followers;
+  });
 </script>
 
 </body>
