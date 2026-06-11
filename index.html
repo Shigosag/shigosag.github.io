@@ -4,9 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Portfolio with GitHub projects, skills, and software solutions." />
+  <!-- SEO -->
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Portfolio showcasing GitHub projects, skills, and software solutions." />
+  <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
+  <meta name="author" content="Segun Arulogun Gabriel" />
+
+  <!-- OpenGraph -->
   <meta property="og:title" content="Shigosag | Developer Portfolio" />
-  <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects and skills." />
+  <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shigosag.github.io" />
   <meta property="og:image" content="https://via.placeholder.com/1200x630" />
@@ -16,28 +21,22 @@
   <style>
     :root{
       --red:#d80000;
-      --bg:#f7f7f7;
-      --dark:#111;
+      --bg:#f6f6f6;
       --card:#fff;
+      --dark:#111;
     }
 
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial,sans-serif;
-      transition:0.3s;
+      font-family:Arial;
     }
 
     body{
       background:var(--bg);
       color:var(--dark);
       padding:20px;
-    }
-
-    .dark{
-      background:#121212;
-      color:#eee;
     }
 
     .container{
@@ -48,12 +47,11 @@
     header{
       text-align:center;
       margin-bottom:20px;
-      animation:fade 0.8s ease-in;
     }
 
     h1{
       color:var(--red);
-      font-size:2.3em;
+      font-size:2.5em;
     }
 
     .btn{
@@ -68,12 +66,13 @@
       cursor:pointer;
     }
 
+    /* STATS */
     .stats{
       display:flex;
       justify-content:center;
       gap:10px;
       flex-wrap:wrap;
-      margin:15px 0;
+      margin:20px 0;
     }
 
     .stat{
@@ -83,11 +82,11 @@
       border-radius:8px;
     }
 
+    /* GRID */
     .grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
       gap:15px;
-      margin-top:15px;
     }
 
     .card{
@@ -95,9 +94,9 @@
       padding:15px;
       border-left:4px solid var(--red);
       border-radius:10px;
-      animation:fadeUp 0.6s ease forwards;
     }
 
+    /* PROJECTS */
     .projects{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
@@ -107,9 +106,9 @@
 
     .project{
       background:var(--card);
-      padding:15px;
-      border-left:4px solid var(--red);
       border-radius:10px;
+      overflow:hidden;
+      border-left:4px solid var(--red);
       transition:0.3s;
     }
 
@@ -118,13 +117,19 @@
       box-shadow:0 10px 20px rgba(0,0,0,0.2);
     }
 
+    .project img{
+      width:100%;
+      height:150px;
+      object-fit:cover;
+    }
+
+    .content{
+      padding:10px;
+    }
+
     a{
       color:var(--red);
       text-decoration:none;
-    }
-
-    a:hover{
-      text-decoration:underline;
     }
 
     footer{
@@ -132,22 +137,12 @@
       margin-top:30px;
       color:gray;
     }
-
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(20px);}
-      to{opacity:1;transform:translateY(0);}
-    }
-
-    @keyframes fade{
-      from{opacity:0;}
-      to{opacity:1;}
-    }
   </style>
 </head>
 
 <body>
 
-<button class="btn" onclick="document.body.classList.toggle('dark')">🌙</button>
+<button class="btn" onclick="toggle()">🌙</button>
 
 <div class="container">
 
@@ -158,20 +153,20 @@
 
   <!-- STATS -->
   <div class="stats">
-    <div class="stat" id="repos">📦 Repos: Loading...</div>
-    <div class="stat" id="followers">👥 Followers: Loading...</div>
+    <div class="stat" id="repos">📦 Repos</div>
+    <div class="stat" id="followers">👥 Followers</div>
   </div>
 
   <!-- ABOUT -->
   <div class="grid">
     <div class="card">
       <h2>👋 About</h2>
-      <p>Full-stack developer building scalable systems and modern web applications.</p>
+      <p>Full-stack developer building scalable systems and modern apps.</p>
     </div>
 
     <div class="card">
       <h2>💻 Skills</h2>
-      <p>React, Node.js, Express, PostgreSQL, MongoDB, Python, FastAPI</p>
+      <p>React, Node.js, Express, PostgreSQL, MongoDB, Python</p>
     </div>
 
     <div class="card">
@@ -185,11 +180,11 @@
   </div>
 
   <!-- PROJECTS -->
-  <h2 style="margin-top:25px;">🚀 GitHub Projects</h2>
+  <h2 style="margin-top:25px;">🚀 Projects</h2>
   <div class="projects" id="projects"></div>
 
   <footer>
-    © 2026 Shigosag | Built with GitHub Pages
+    © 2026 Shigosag
   </footer>
 
 </div>
@@ -197,31 +192,43 @@
 <script>
 const user = "Shigosag";
 
-/* GitHub Profile Stats */
+/* DARK MODE */
+function toggle(){
+  document.body.classList.toggle("dark");
+}
+
+/* GITHUB STATS */
 fetch(`https://api.github.com/users/${user}`)
-  .then(r => r.json())
-  .then(d => {
-    document.getElementById("repos").innerText = "📦 Repos: " + d.public_repos;
-    document.getElementById("followers").innerText = "👥 Followers: " + d.followers;
-  });
+.then(r=>r.json())
+.then(d=>{
+  document.getElementById("repos").innerText = "📦 Repos: " + d.public_repos;
+  document.getElementById("followers").innerText = "👥 Followers: " + d.followers;
+});
 
-/* GitHub Repos */
+/* PROJECTS */
 fetch(`https://api.github.com/users/${user}/repos`)
-  .then(r => r.json())
-  .then(data => {
-    const box = document.getElementById("projects");
+.then(r=>r.json())
+.then(data=>{
+  const box=document.getElementById("projects");
 
-    data.slice(0, 6).forEach(repo => {
-      const div = document.createElement("div");
-      div.className = "project";
-      div.innerHTML = `
+  data.slice(0,6).forEach(repo=>{
+    const div=document.createElement("div");
+    div.className="project";
+
+    const img = `https://opengraph.githubassets.com/1/${user}/${repo.name}`;
+
+    div.innerHTML=`
+      <img src="${img}" />
+      <div class="content">
         <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
         <p>${repo.description || "No description"}</p>
         ⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}
-      `;
-      box.appendChild(div);
-    });
+      </div>
+    `;
+
+    box.appendChild(div);
   });
+});
 </script>
 
 </body>
