@@ -331,7 +331,7 @@ fetch(`https://api.github.com/users/${user}/starred`)
 .then(res=>res.json())
 .then(data=>{
   const box = document.getElementById("projects");
-  data.slice(0,6).forEach((repo,i)=>{
+  data.reverse().slice(0,6).forEach((repo,i)=>{
     const div = document.createElement("div");
     div.className = "project";
     div.style.animationDelay = (0.2*i) + "s";
