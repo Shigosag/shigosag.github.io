@@ -1,271 +1,306 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Portfolio showcasing GitHub projects, skills, and software solutions." />
-<meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
-<meta name="author" content="Segun Arulogun Gabriel" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<!-- OpenGraph -->
-<meta property="og:title" content="Shigosag | Developer Portfolio" />
-<meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://shigosag.github.io" />
-<meta property="og:image" content="https://via.placeholder.com/1200x630" />
+  <!-- SEO -->
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Portfolio showcasing GitHub projects, skills, and software solutions." />
+  <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
+  <meta name="author" content="Segun Arulogun Gabriel" />
 
-<title>Shigosag | Developer Portfolio</title>
+  <!-- OpenGraph -->
+  <meta property="og:title" content="Shigosag | Developer Portfolio" />
+  <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://shigosag.github.io" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630" />
 
-<style>
-:root{
-  --red:#d80000;
-  --bg:#f6f6f6;
-  --card:#fff;
-  --dark:#111;
-}
+  <title>Shigosag | Developer Portfolio</title>
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:Arial;
-}
+  <style>
+    :root {
+      --red: #d80000;
+      --bg: #f7f7f7;
+      --dark: #111;
+      --card: #fff;
+      --bg-dark: #121212;
+      --text-dark: #eee;
+    }
 
-body{
-  background:var(--bg);
-  color:var(--dark);
-  padding:20px;
-  transition: background 0.3s, color 0.3s;
-}
+    * {
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+      transition: all 0.3s ease;
+    }
 
-body.dark {
-  background:#121212;
-  color:#eee;
-}
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+      padding: 20px;
+    }
 
-body.dark .card,
-body.dark .stat,
-body.dark .project {
-  background:#1e1e1e;
-  color:#eee;
-}
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-dark);
+    }
 
-.container{
-  max-width:1000px;
-  margin:auto;
-}
+    body.dark .card,
+    body.dark .stat,
+    body.dark .project {
+      background: #1e1e1e;
+      color: var(--text-dark);
+    }
 
-header{
-  text-align:center;
-  margin-bottom:20px;
-  animation: fadeDown 0.8s ease;
-}
+    .container {
+      max-width: 1000px;
+      margin: auto;
+    }
 
-header img{
-  width:80px;
-  height:80px;
-  border-radius:50%;
-  animation: bounce 2s infinite;
-}
+    /* HERO / HEADER */
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+      animation: fadeDown 1s ease forwards;
+    }
 
-header h1{
-  color:var(--red);
-  font-size:2.5em;
-  animation: fadeUp 1s ease forwards;
-}
+    header img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      animation: spinLogo 2s linear infinite;
+    }
 
-.btn{
-  position:fixed;
-  top:15px;
-  right:15px;
-  background:var(--red);
-  color:#fff;
-  border:none;
-  padding:8px 12px;
-  border-radius:5px;
-  cursor:pointer;
-  z-index:10;
-}
+    header h1 {
+      color: var(--red);
+      font-size: 2.5em;
+      margin-bottom: 5px;
+      animation: fadeUp 1s ease forwards;
+    }
 
-/* STATS */
-.stats{
-  display:flex;
-  justify-content:center;
-  gap:10px;
-  flex-wrap:wrap;
-  margin:20px 0;
-  animation: fadeUp 0.6s forwards;
-}
+    header p {
+      color: #666;
+      font-size: 1.1em;
+      animation: fadeUp 1s ease forwards;
+      animation-delay: 0.3s;
+    }
 
-.stat{
-  background:var(--card);
-  padding:10px 15px;
-  border-left:4px solid var(--red);
-  border-radius:8px;
-  transition:0.3s;
-}
+    .btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: var(--red);
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-/* GRID CARDS */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-  margin-top:15px;
-}
+    /* STATS */
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
 
-.card{
-  background:var(--card);
-  padding:15px;
-  border-left:4px solid var(--red);
-  border-radius:10px;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeUp 0.6s forwards;
-}
+    .stat {
+      background: var(--card);
+      padding: 10px 15px;
+      border-left: 4px solid var(--red);
+      border-radius: 10px;
+      animation: fadeUp 0.6s forwards;
+    }
 
-.card:nth-child(1){ animation-delay:0.1s; }
-.card:nth-child(2){ animation-delay:0.2s; }
-.card:nth-child(3){ animation-delay:0.3s; }
+    /* GRID CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-/* PROJECTS */
-.projects{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:15px;
-  margin-top:20px;
-}
+    .card {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--red);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s forwards;
+    }
 
-.project{
-  background:var(--card);
-  border-radius:10px;
-  overflow:hidden;
-  border-left:4px solid var(--red);
-  transition:0.3s;
-  opacity:0;
-  transform:translateY(20px);
-  animation:fadeUp 0.6s forwards;
-}
+    h2 {
+      color: var(--red);
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
 
-.project img{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-}
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-.project:nth-child(1){ animation-delay:0.1s; }
-.project:nth-child(2){ animation-delay:0.2s; }
-.project:nth-child(3){ animation-delay:0.3s; }
+    ul li {
+      margin-bottom: 8px;
+    }
 
-.content{
-  padding:10px;
-}
+    a {
+      color: var(--red);
+      text-decoration: none;
+    }
 
-a{
-  color:var(--red);
-  text-decoration:none;
-}
+    a:hover {
+      text-decoration: underline;
+    }
 
-footer{
-  text-align:center;
-  margin-top:30px;
-  color:gray;
-}
+    /* PROJECT CARDS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
 
-/* ANIMATIONS */
-@keyframes fadeUp{
-  to{opacity:1; transform:translateY(0);}
-}
+    .project {
+      background: var(--card);
+      border-radius: 12px;
+      overflow: hidden;
+      border-left: 4px solid var(--red);
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 0.6s forwards;
+    }
 
-@keyframes fadeDown{
-  from{opacity:0; transform:translateY(-20px);}
-  to{opacity:1; transform:translateY(0);}
-}
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
 
-@keyframes bounce{
-  0%,100%{transform:translateY(0);}
-  50%{transform:translateY(-10px);}
-}
-</style>
+    .project img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .project .content {
+      padding: 15px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: gray;
+      font-size: 0.9em;
+    }
+
+    /* ANIMATIONS */
+    @keyframes fadeUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity:0; transform: translateY(-20px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+
+    @keyframes spinLogo {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
 </head>
-
 <body>
 
 <button class="btn" onclick="toggleDark()">🌙</button>
 
 <div class="container">
 
-<header>
-  <img src="https://via.placeholder.com/80" alt="Logo" />
-  <h1>Shigosag</h1>
-  <p>Segun Arulogun Gabriel • Full-Stack Developer</p>
-</header>
+  <header>
+    <img src="https://via.placeholder.com/100" alt="Shigosag Logo">
+    <h1>Shigosag</h1>
+    <p>Segun Arulogun Gabriel • Full-Stack Developer</p>
+  </header>
 
-<!-- STATS -->
-<div class="stats">
-  <div class="stat" id="repos">📦 Repos</div>
-  <div class="stat" id="followers">👥 Followers</div>
-</div>
-
-<!-- ABOUT / SKILLS / LINKS -->
-<div class="grid">
-  <div class="card">
-    <h2>👋 About</h2>
-    <p>Full-stack developer building scalable systems and modern apps.</p>
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat" id="repos">📦 Repos: Loading...</div>
+    <div class="stat" id="followers">👥 Followers: Loading...</div>
   </div>
 
-  <div class="card">
-    <h2>💻 Skills</h2>
-    <p>React, Node.js, Express, PostgreSQL, MongoDB, Python, FastAPI</p>
+  <!-- ABOUT / SKILLS / LINKS -->
+  <div class="grid">
+    <div class="card" style="animation-delay:0.1s">
+      <h2>👋 About</h2>
+      <p>Full-stack developer building scalable systems and modern apps.</p>
+    </div>
+
+    <div class="card" style="animation-delay:0.2s">
+      <h2>💻 Skills</h2>
+      <ul>
+        <li>React / TypeScript / Vite</li>
+        <li>Node.js / Express / Prisma</li>
+        <li>PostgreSQL / MongoDB</li>
+        <li>Python / FastAPI / Flask</li>
+      </ul>
+    </div>
+
+    <div class="card" style="animation-delay:0.3s">
+      <h2>🌐 Links</h2>
+      <ul>
+        <li><a href="https://github.com/Shigosag" target="_blank">GitHub</a></li>
+        <li><a href="#">LinkedIn</a></li>
+        <li><a href="#">Medium</a></li>
+        <li><a href="#">Wikialpha</a></li>
+      </ul>
+    </div>
   </div>
 
-  <div class="card">
-    <h2>🌐 Links</h2>
-    <p>
-      <a href="https://github.com/Shigosag">GitHub</a> •
-      <a href="#">LinkedIn</a> •
-      <a href="#">Medium</a>
-    </p>
-  </div>
-</div>
+  <!-- PROJECTS -->
+  <h2 style="margin-top:30px;">🚀 GitHub Projects</h2>
+  <div class="projects" id="projects"></div>
 
-<!-- PROJECTS -->
-<h2 style="margin-top:25px;">🚀 GitHub Projects</h2>
-<div class="projects" id="projects"></div>
-
-<footer>
-© 2026 Shigosag
-</footer>
+  <footer>
+    © 2026 Shigosag | Built with GitHub Pages
+  </footer>
 
 </div>
 
 <script>
 const user = "Shigosag";
 
-/* DARK MODE */
-function toggleDark(){
-  document.body.classList.toggle("dark");
+/* DARK MODE TOGGLE */
+function toggleDark() {
+  document.body.classList.toggle('dark');
 }
 
-/* GITHUB STATS */
+/* Fetch GitHub Stats */
 fetch(`https://api.github.com/users/${user}`)
-.then(r=>r.json())
+.then(res=>res.json())
 .then(d=>{
   document.getElementById("repos").innerText = "📦 Repos: " + d.public_repos;
   document.getElementById("followers").innerText = "👥 Followers: " + d.followers;
 });
 
-/* PROJECTS */
+/* Fetch Repos for Projects */
 fetch(`https://api.github.com/users/${user}/repos`)
-.then(r=>r.json())
+.then(res=>res.json())
 .then(data=>{
-  const box=document.getElementById("projects");
+  const box = document.getElementById("projects");
   data.slice(0,6).forEach((repo,i)=>{
-    const div=document.createElement("div");
-    div.className="project";
-    div.style.animationDelay = (0.1*(i+1)) + "s";
-    const img=`https://opengraph.githubassets.com/1/${user}/${repo.name}`;
-    div.innerHTML=`
-      <img src="${img}" />
+    const div = document.createElement("div");
+    div.className = "project";
+    div.style.animationDelay = (0.2*i) + "s";
+    div.innerHTML = `
+      <img src="https://opengraph.githubassets.com/1/${user}/${repo.name}" />
       <div class="content">
         <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
         <p>${repo.description || "No description"}</p>
