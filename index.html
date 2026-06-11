@@ -3,117 +3,151 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Developer portfolio showcasing GitHub projects, skills, and software solutions." />
+
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Portfolio with GitHub projects, skills, and software solutions." />
   <meta property="og:title" content="Shigosag | Developer Portfolio" />
-  <meta property="og:description" content="Full-Stack Developer Portfolio - GitHub Projects & Skills" />
+  <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects and skills." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shigosag.github.io" />
   <meta property="og:image" content="https://via.placeholder.com/1200x630" />
+
   <title>Shigosag | Developer Portfolio</title>
 
   <style>
-    :root {
-      --red: #d80000;
-      --bg: #f7f7f7;
-      --dark: #111;
-      --card: #fff;
+    :root{
+      --red:#d80000;
+      --bg:#f7f7f7;
+      --dark:#111;
+      --card:#fff;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial,sans-serif;
+      transition:0.3s;
     }
 
-    body {
-      background: var(--bg);
-      color: var(--dark);
-      padding: 20px;
+    body{
+      background:var(--bg);
+      color:var(--dark);
+      padding:20px;
     }
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
+    .dark{
+      background:#121212;
+      color:#eee;
     }
 
-    header {
-      text-align: center;
-      margin-bottom: 20px;
+    .container{
+      max-width:1000px;
+      margin:auto;
     }
 
-    header h1 {
-      color: var(--red);
-      font-size: 2.2em;
+    header{
+      text-align:center;
+      margin-bottom:20px;
+      animation:fade 0.8s ease-in;
     }
 
-    header p {
-      color: #666;
+    h1{
+      color:var(--red);
+      font-size:2.3em;
     }
 
-    /* STATS */
-    .stats {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin: 20px 0;
-      flex-wrap: wrap;
+    .btn{
+      position:fixed;
+      top:15px;
+      right:15px;
+      background:var(--red);
+      color:#fff;
+      border:none;
+      padding:8px 12px;
+      border-radius:5px;
+      cursor:pointer;
     }
 
-    .stat {
-      background: var(--card);
-      padding: 10px 15px;
-      border-radius: 10px;
-      border-left: 4px solid var(--red);
+    .stats{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      flex-wrap:wrap;
+      margin:15px 0;
     }
 
-    /* GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
+    .stat{
+      background:var(--card);
+      padding:10px 15px;
+      border-left:4px solid var(--red);
+      border-radius:8px;
     }
 
-    .card {
-      background: var(--card);
-      padding: 15px;
-      border-radius: 10px;
-      border-left: 4px solid var(--red);
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:15px;
+      margin-top:15px;
     }
 
-    h2 {
-      color: var(--red);
-      margin-bottom: 10px;
+    .card{
+      background:var(--card);
+      padding:15px;
+      border-left:4px solid var(--red);
+      border-radius:10px;
+      animation:fadeUp 0.6s ease forwards;
     }
 
-    /* PROJECTS */
-    .projects {
-      margin-top: 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 15px;
+    .projects{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:15px;
+      margin-top:20px;
     }
 
-    .project {
-      background: var(--card);
-      padding: 15px;
-      border-radius: 10px;
-      border-left: 4px solid var(--red);
-      transition: 0.3s;
+    .project{
+      background:var(--card);
+      padding:15px;
+      border-left:4px solid var(--red);
+      border-radius:10px;
+      transition:0.3s;
     }
 
-    .project:hover {
-      transform: translateY(-5px);
+    .project:hover{
+      transform:translateY(-6px);
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
     }
 
-    a {
-      color: var(--red);
-      text-decoration: none;
+    a{
+      color:var(--red);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    footer{
+      text-align:center;
+      margin-top:30px;
+      color:gray;
+    }
+
+    @keyframes fadeUp{
+      from{opacity:0;transform:translateY(20px);}
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    @keyframes fade{
+      from{opacity:0;}
+      to{opacity:1;}
     }
   </style>
 </head>
 
 <body>
+
+<button class="btn" onclick="document.body.classList.toggle('dark')">🌙</button>
 
 <div class="container">
 
@@ -122,23 +156,22 @@
     <p>Segun Arulogun Gabriel • Full-Stack Developer</p>
   </header>
 
-  <!-- GITHUB STATS -->
+  <!-- STATS -->
   <div class="stats">
-    <div class="stat">⭐ Repos: Loading...</div>
-    <div class="stat">📦 Followers: Loading...</div>
-    <div class="stat">💻 Public Projects</div>
+    <div class="stat" id="repos">📦 Repos: Loading...</div>
+    <div class="stat" id="followers">👥 Followers: Loading...</div>
   </div>
 
   <!-- ABOUT -->
   <div class="grid">
     <div class="card">
       <h2>👋 About</h2>
-      <p>Full-stack developer building scalable web & software systems.</p>
+      <p>Full-stack developer building scalable systems and modern web applications.</p>
     </div>
 
     <div class="card">
       <h2>💻 Skills</h2>
-      <p>React, Node.js, Express, PostgreSQL, Python, FastAPI</p>
+      <p>React, Node.js, Express, PostgreSQL, MongoDB, Python, FastAPI</p>
     </div>
 
     <div class="card">
@@ -151,39 +184,43 @@
     </div>
   </div>
 
-  <!-- PROJECTS (AUTO FETCH) -->
+  <!-- PROJECTS -->
   <h2 style="margin-top:25px;">🚀 GitHub Projects</h2>
   <div class="projects" id="projects"></div>
+
+  <footer>
+    © 2026 Shigosag | Built with GitHub Pages
+  </footer>
 
 </div>
 
 <script>
-const username = "Shigosag";
+const user = "Shigosag";
 
-/* FETCH GITHUB REPOS */
-fetch(`https://api.github.com/users/${username}/repos`)
-  .then(res => res.json())
+/* GitHub Profile Stats */
+fetch(`https://api.github.com/users/${user}`)
+  .then(r => r.json())
+  .then(d => {
+    document.getElementById("repos").innerText = "📦 Repos: " + d.public_repos;
+    document.getElementById("followers").innerText = "👥 Followers: " + d.followers;
+  });
+
+/* GitHub Repos */
+fetch(`https://api.github.com/users/${user}/repos`)
+  .then(r => r.json())
   .then(data => {
-    const container = document.getElementById("projects");
+    const box = document.getElementById("projects");
 
     data.slice(0, 6).forEach(repo => {
       const div = document.createElement("div");
       div.className = "project";
       div.innerHTML = `
         <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-        <p>${repo.description || "No description available"}</p>
+        <p>${repo.description || "No description"}</p>
         ⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}
       `;
-      container.appendChild(div);
+      box.appendChild(div);
     });
-  });
-
-/* SIMPLE STATS */
-fetch(`https://api.github.com/users/${username}`)
-  .then(res => res.json())
-  .then(user => {
-    document.querySelectorAll(".stat")[0].innerText = "📦 Repos: " + user.public_repos;
-    document.querySelectorAll(".stat")[1].innerText = "👥 Followers: " + user.followers;
   });
 </script>
 
