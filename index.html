@@ -1,71 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Developer portfolio showcasing projects, skills, and software solutions.">
-    <title>Shigosag | Segun Arulogun Gabriel - Developer Portfolio</title>
-    <style>
-        /* Basic reset */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Developer portfolio showcasing projects, skills, and software solutions." />
+  <title>Shigosag | Developer Portfolio</title>
 
-        body { background: #fff; color: #333; line-height: 1.6; padding: 20px; }
+  <style>
+    :root {
+      --red: #d80000;
+      --dark: #111;
+      --gray: #666;
+      --bg: #f7f7f7;
+    }
 
-        header { display: flex; align-items: center; margin-bottom: 20px; }
-        header img { width: 60px; height: 60px; margin-right: 15px; }
-        header h1 { color: #d80000; font-size: 2em; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
 
-        p.bio { margin: 10px 0; font-size: 1.1em; }
+    body {
+      background: var(--bg);
+      color: var(--dark);
+      line-height: 1.6;
+    }
 
-        section { margin-top: 20px; }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
 
-        h2 { color: #d80000; margin-bottom: 10px; }
+    /* HEADER */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
 
-        ul { list-style: none; padding-left: 0; }
-        ul li { margin-bottom: 8px; }
-        a { color: #d80000; text-decoration: none; transition: color 0.3s; }
-        a:hover { color: #ff4d4d; }
+    header img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
 
-        footer { margin-top: 30px; font-size: 0.9em; color: #555; }
-    </style>
+    header h1 {
+      color: var(--red);
+      font-size: 2.2em;
+    }
+
+    header p {
+      color: var(--gray);
+      margin-top: 5px;
+    }
+
+    /* CARDS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+      border-left: 4px solid var(--red);
+    }
+
+    .card h2 {
+      color: var(--red);
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+    }
+
+    a {
+      color: var(--red);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      margin-top: 30px;
+      color: var(--gray);
+      font-size: 0.9em;
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
+
+    <!-- HEADER -->
     <header>
-        <img src="https://shigosag.github.io/assets/logo.png" alt="Shigosag Logo">
-        <h1>Shigosag</h1>
+      <img src="https://via.placeholder.com/80" alt="Shigosag Logo" />
+      <h1>Shigosag</h1>
+      <p>Segun Arulogun Gabriel • Full-Stack Developer</p>
     </header>
 
-    <p class="bio">Hi! I'm <strong>Segun Arulogun Gabriel</strong>, a full-stack developer passionate about building modern web and software solutions.</p>
+    <!-- GRID -->
+    <div class="grid">
 
-    <section>
+      <div class="card">
+        <h2>👋 About Me</h2>
+        <p>
+          I am a passionate full-stack developer building modern web and software solutions with scalable architecture.
+        </p>
+      </div>
+
+      <div class="card">
         <h2>💻 Skills</h2>
         <ul>
-            <li>React, TypeScript, Vite</li>
-            <li>Node.js, Express, Prisma, PostgreSQL</li>
-            <li>Python, Flask, FastAPI</li>
-            <li>HTML, CSS, JavaScript</li>
+          <li>React / TypeScript / Vite</li>
+          <li>Node.js / Express / Prisma</li>
+          <li>PostgreSQL / MongoDB</li>
+          <li>Python / FastAPI / Flask</li>
         </ul>
-    </section>
+      </div>
 
-    <section>
+      <div class="card">
         <h2>🚀 Projects</h2>
         <ul>
-            <li><a href="https://github.com/Shigosag">GitHub Profile</a></li>
-            <li><a href="https://github.com/Shigosag/business-management-system">Business Management System</a></li>
+          <li><a href="https://github.com/Shigosag">GitHub Profile</a></li>
+          <li><a href="https://github.com/Shigosag/business-management-system">Business Management System</a></li>
         </ul>
-    </section>
+      </div>
 
-    <section>
+      <div class="card">
         <h2>🌐 Connect</h2>
         <ul>
-            <li><a href="https://www.linkedin.com/in/shigosag" target="_blank">LinkedIn</a></li>
-            <li><a href="https://medium.com/@shigosag" target="_blank">Medium</a></li>
-            <li><a href="https://wikialpha.org/wiki/Shigosag" target="_blank">Wikialpha</a></li>
+          <li><a href="https://linkedin.com" target="_blank">LinkedIn</a></li>
+          <li><a href="https://medium.com" target="_blank">Medium</a></li>
+          <li><a href="https://wikialpha.org" target="_blank">Wikialpha</a></li>
+          <li><a href="https://github.com/Shigosag" target="_blank">GitHub</a></li>
         </ul>
-    </section>
+      </div>
+
+    </div>
 
     <footer>
-        &copy; 2026 Shigosag | Segun Arulogun Gabriel
+      © 2026 Shigosag | Built with GitHub Pages
     </footer>
+
+  </div>
 </body>
 </html>
