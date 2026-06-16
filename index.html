@@ -121,19 +121,6 @@ body.dark {
   cursor: pointer;
 }
 
-/* SIDEBAR HEADER */
-.sidebar-header {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
-
-  background: linear-gradient(90deg, #fff, #ffcccc);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
 /* SIDEBAR */
 #nav-links {
   position: fixed;
@@ -156,11 +143,14 @@ body.dark {
   content: "Shigosag";
   font-size: 20px;
   font-weight: bold;
-  color: white;
-  margin-bottom: 10px;
   display: block;
-  border-bottom: 1px solid rgba(255,255,255,0.3);
+  margin-bottom: 15px;
   padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+
+  background: linear-gradient(90deg, #ffffff, #ff4d4d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /* OPEN STATE */
@@ -335,10 +325,7 @@ body.dark .project {
   </nav>
   
   <ul id="nav-links">
-    <li class="sidebar-header">
-      <div class="logo">Shigosag</div>
-      <span onclick="toggleMenu()" style="cursor:pointer;">❌ Close</span>
-    </li>
+    <li onclick="toggleMenu()" style="cursor:pointer; font-size:20px;">✖</li>
     
     <li><a href="https://github.com/Shigosag" target="_blank">GitHub Profile</a></li>
     <li><a href="https://github.com/Shigosag/Shigosag" target="_blank">Profile README</a></li>
