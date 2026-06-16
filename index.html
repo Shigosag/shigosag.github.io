@@ -15,6 +15,8 @@
     "jobTitle": "Entrepreneur, Civil Engineering Graduate, Forex Trader, Full-Stack Developer",
     "sameAs": [
       "https://github.com/Shigosag",
+      "https://github.com/Shigosag/Shigosag",
+      "https://github.com/Shigosag?tab=repositories",
       "https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6",
       "https://about.me/Shigosag"
     ]
@@ -40,221 +42,286 @@
   <link rel="icon" type="image/png" sizes="16x16" href="https://shigosag.github.io/assets/logo1.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://shigosag.github.io/assets/logo1.png">
 
-  <style>
-    :root {
-      --red: #d80000;
-      --bg: #f7f7f7;
-      --dark: #111;
-      --card: #fff;
-      --bg-dark: #121212;
-      --text-dark: #eee;
-    }
+<style>
+:root {
+  --red: #d80000;
+  --bg: #f7f7f7;
+  --dark: #111;
+  --card: #fff;
+  --bg-dark: #121212;
+  --text-dark: #eee;
+}
 
-    * {
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family: Arial, sans-serif;
-      transition: all 0.3s ease;
-    }
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: var(--card);
+  border-bottom: 2px solid var(--red);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    body {
-      background: var(--bg);
-      color: var(--dark);
-      line-height: 1.6;
-      padding: 20px;
-    }
+.navbar .logo {
+  font-weight: bold;
+  color: var(--red);
+  font-size: 18px;
+}
 
-    body.dark {
-      background: var(--bg-dark);
-      color: var(--text-dark);
-    }
+.navbar ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+}
 
-    .container {
-      max-width: 1000px;
-      margin: auto;
-    }
+.navbar ul li a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+}
 
-    /* HERO / HEADER */
-    header {
-      text-align: center;
-      margin-bottom: 20px;
-      animation: fadeDown 1s ease forwards;
-    }
+.navbar ul li a:hover {
+  color: var(--red);
+}
 
-    header img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      margin-bottom: 10px;
-      cursor: pointer;
-    }
+.nav-toggle {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+}
 
-    header img.rotate {
-      animation: spinLogo 2s linear infinite;
-    }
+/* RESET */
+* {
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: Arial, sans-serif;
+  transition: all 0.3s ease;
+}
 
-    header h1 {
-      color: var(--red);
-      font-size: 2.5em;
-      margin-bottom: 5px;
-      animation: fadeUp 1s ease forwards;
-    }
+body {
+  background: var(--bg);
+  color: var(--dark);
+  line-height: 1.6;
+  padding: 20px;
+}
 
-    header p {
-      color: #666;
-      font-size: 1.1em;
-      animation: fadeUp 1s ease forwards;
-      animation-delay: 0.3s;
-    }
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
 
-    .btn {
-      position: fixed;
-      top: 15px;
-      right: 15px;
-      background: var(--red);
-      color: #fff;
-      border: none;
-      padding: 12px 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      z-index: 9999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+/* CONTAINER */
+.container {
+  max-width: 1000px;
+  margin: auto;
+}
 
-    /* STATS */
-    .stats {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin: 20px 0;
-    }
+/* HERO */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeDown 1s ease forwards;
+}
 
-    .stat {
-      background: var(--card);
-      padding: 10px 15px;
-      border-left: 4px solid var(--red);
-      border-radius: 10px;
-      animation: fadeUp 0.6s forwards;
-    }
+header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
 
-    /* GRID CARDS */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
+header img.rotate {
+  animation: spinLogo 2s linear infinite;
+}
 
-    .card {
-      background: var(--card);
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-      border-left: 4px solid var(--red);
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.6s forwards;
-    }
+header h1 {
+  color: var(--red);
+  font-size: 2.5em;
+  margin-bottom: 5px;
+  animation: fadeUp 1s ease forwards;
+}
 
-    .card.gradient1 { background: linear-gradient(to right, #ff7e5f, #feb47b); }
-    .card.gradient2 { background: linear-gradient(to right, #6a11cb, #2575fc); }
-    .card.gradient3 { background: linear-gradient(to right, #43cea2, #185a9d); }
+header p {
+  color: #666;
+  font-size: 1.1em;
+  animation: fadeUp 1s ease forwards;
+  animation-delay: 0.3s;
+}
 
-    h2 {
-      color: var(--red);
-      margin-bottom: 10px;
-      font-size: 1.2em;
-    }
+/* BUTTON */
+.btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9999;
+}
 
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
+/* STATS */
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
 
-    ul li {
-      margin-bottom: 8px;
-    }
+.stat {
+  background: var(--card);
+  padding: 10px 15px;
+  border-left: 4px solid var(--red);
+  border-radius: 10px;
+  animation: fadeUp 0.6s forwards;
+}
 
-    a {
-      color: var(--red);
-      text-decoration: none;
-    }
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
 
-    a:hover {
-      text-decoration: underline;
-    }
+.card {
+  background: var(--card);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  border-left: 4px solid var(--red);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
 
-    /* PROJECT CARDS */
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
+/* GRADIENTS */
+.card.gradient1 { background: linear-gradient(to right, #ff7e5f, #feb47b); }
+.card.gradient2 { background: linear-gradient(to right, #6a11cb, #2575fc); }
+.card.gradient3 { background: linear-gradient(to right, #43cea2, #185a9d); }
 
-    .project {
-      background: var(--card);
-      border-radius: 12px;
-      overflow: hidden;
-      border-left: 4px solid var(--red);
-      transition: transform 0.3s, box-shadow 0.3s;
-      opacity: 0;
-      transform: translateY(20px);
-      animation: fadeUp 0.6s forwards;
-    }
+/* TEXT */
+h2 {
+  color: var(--red);
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
 
-    .project:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-    }
+ul {
+  list-style: none;
+  padding-left: 0;
+}
 
-    .project img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
+ul li {
+  margin-bottom: 8px;
+}
 
-    .project .content {
-      padding: 15px;
-    }
+a {
+  color: var(--red);
+  text-decoration: none;
+}
 
-    footer {
-      text-align: center;
-      margin-top: 30px;
-      color: gray;
-      font-size: 0.9em;
-    }
+a:hover {
+  text-decoration: underline;
+}
 
-    /* DARK MODE */
-    body.dark .card,
-    body.dark .stat,
-    body.dark .project {
-      background: #1e1e1e !important;
-      color: var(--text-dark);
-    }
+/* PROJECTS */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
 
-    /* ANIMATIONS */
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+.project {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  border-left: 4px solid var(--red);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.6s forwards;
+}
 
-    @keyframes fadeDown {
-      from { opacity:0; transform: translateY(-20px); }
-      to { opacity:1; transform: translateY(0); }
-    }
+.project:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
 
-    @keyframes spinLogo {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-  </style>
+.project img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.project .content {
+  padding: 15px;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  color: gray;
+  font-size: 0.9em;
+}
+
+/* DARK MODE */
+body.dark .card,
+body.dark .stat,
+body.dark .project {
+  background: #1e1e1e !important;
+  color: var(--text-dark);
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity:0; transform: translateY(-20px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+@keyframes spinLogo {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
 </head>
 <body>
 
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="logo">Shigosag</div>
+
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <ul id="nav-links">
+    <li><a href="https://github.com/Shigosag" target="_blank">GitHub Profile</a></li>
+    <li><a href="https://github.com/Shigosag/Shigosag" target="_blank">Profile README</a></li>
+    <li><a href="https://github.com/Shigosag?tab=repositories" target="_blank">Repositories</a></li>
+
+    <li class="divider">Featured Projects</li>
+
+    <li><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">POS System</a></li>
+    <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">Business Management System</a></li>
+    <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">SaaS Dashboard</a></li>
+    <li><a href="https://github.com/Shigosag/AnalyticsCLI" target="_blank">Data Analysis CLI</a></li>
+    <li><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank">E-commerce Platform</a></li>
+  </ul>
+</nav>
+  
 <button class="btn" onclick="toggleMode()">🌙 / 🌈</button>
 
 <div class="container">
