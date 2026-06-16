@@ -42,7 +42,6 @@
   <link rel="icon" type="image/png" sizes="16x16" href="https://shigosag.github.io/assets/logo1.png">
   <link rel="apple-touch-icon" sizes="180x180" href="https://shigosag.github.io/assets/logo1.png">
 
-<style>
 :root {
   --red: #d80000;
   --bg: #f7f7f7;
@@ -54,9 +53,9 @@
 
 /* RESET */
 * {
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
   transition: all 0.3s ease;
 }
@@ -98,9 +97,25 @@ body.dark {
   font-size: 18px;
 }
 
-/* HAMBURGER */
+/* RIGHT SIDE ACTIONS */
+.nav-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
 .menu-icon {
-  font-size: 26px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* SMALL BUTTON (theme toggle) */
+.btn-small {
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
   cursor: pointer;
 }
 
@@ -110,53 +125,32 @@ body.dark {
   top: 0;
   right: -280px;
   width: 260px;
-  height: 100vh;
+  height: 100%;
   background: var(--card);
-  padding: 70px 20px;
-  list-style: none;
+  padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 12px;
   transition: right 0.3s ease;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.15);
   z-index: 2000;
+  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
 }
 
 #nav-links.show {
   right: 0;
 }
 
-#nav-links li a {
+#nav-links li {
+  list-style: none;
+}
+
+#nav-links a {
   text-decoration: none;
   color: var(--dark);
-  font-weight: 500;
 }
 
-#nav-links li a:hover {
+#nav-links a:hover {
   color: var(--red);
-}
-
-/* CLOSE BUTTON */
-#nav-links .close {
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  margin-bottom: 10px;
-  color: var(--red);
-}
-
-/* BUTTON */
-.btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: var(--red);
-  color: #fff;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 9999;
 }
 
 /* HERO */
@@ -171,6 +165,7 @@ header img {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 header img.rotate {
@@ -180,6 +175,7 @@ header img.rotate {
 header h1 {
   color: var(--red);
   font-size: 2.5em;
+  margin-bottom: 5px;
 }
 
 header p {
@@ -221,10 +217,6 @@ header p {
   animation: fadeUp 0.6s forwards;
 }
 
-.card.gradient1 { background: linear-gradient(to right, #ff7e5f, #feb47b); }
-.card.gradient2 { background: linear-gradient(to right, #6a11cb, #2575fc); }
-.card.gradient3 { background: linear-gradient(to right, #43cea2, #185a9d); }
-
 /* PROJECTS */
 .projects {
   display: grid;
@@ -238,26 +230,22 @@ header p {
   border-radius: 12px;
   overflow: hidden;
   border-left: 4px solid var(--red);
-  transition: 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .project:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-/* TEXT */
-h2 {
-  color: var(--red);
-  margin-bottom: 10px;
+.project img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
 }
 
-ul {
-  list-style: none;
-}
-
-a {
-  color: var(--red);
-  text-decoration: none;
+.project .content {
+  padding: 15px;
 }
 
 /* FOOTER */
@@ -265,6 +253,7 @@ footer {
   text-align: center;
   margin-top: 30px;
   color: gray;
+  font-size: 0.9em;
 }
 
 /* DARK MODE */
@@ -276,21 +265,34 @@ body.dark #nav-links {
   color: var(--text-dark);
 }
 
+/* BUTTON (theme toggle fallback if needed) */
+.btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  background: var(--red);
+  color: #fff;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  z-index: 9999;
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp {
   to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes fadeDown {
-  from { opacity:0; transform: translateY(-20px); }
-  to { opacity:1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes spinLogo {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-</style>
 </head>
 <body>
 
@@ -298,8 +300,11 @@ body.dark #nav-links {
 <nav class="navbar">
   <div class="logo">Shigosag</div>
 
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
+  <div class="nav-actions">
+    <button class="btn-small" onclick="toggleMode()">🌙 / 🌈</button>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
+  
   <ul id="nav-links">
     <li onclick="toggleMenu()" style="cursor:pointer; margin-bottom:20px;">❌ Close</li>
     
@@ -316,8 +321,6 @@ body.dark #nav-links {
     <li><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank">E-commerce Platform</a></li>
   </ul>
 </nav>
-  
-<button class="btn" onclick="toggleMode()">🌙 / 🌈</button>
 
 <div class="container">
 
