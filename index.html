@@ -50,6 +50,7 @@
   --card: #fff;
   --bg-dark: #121212;
   --text-dark: #eee;
+  --sidebar: #d80000;
 }
 
 /* RESET */
@@ -110,7 +111,7 @@ body.dark {
   cursor: pointer;
 }
 
-/* SMALL BUTTON (theme toggle) */
+/* THEME BUTTON */
 .btn-small {
   background: var(--red);
   color: #fff;
@@ -120,38 +121,61 @@ body.dark {
   cursor: pointer;
 }
 
-/* SIDEBAR MENU */
+/* =========================
+   SIDEBAR (FIXED + RED)
+========================= */
 #nav-links {
   position: fixed;
   top: 0;
-  right: -280px;
-  width: 260px;
+  right: -300px;
+  width: 280px;
   height: 100%;
-  background: var(--card);
+  background: var(--sidebar);
   padding: 20px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
   transition: right 0.3s ease;
   z-index: 2000;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.2);
+  box-shadow: -5px 0 20px rgba(0,0,0,0.3);
 }
 
+/* OPEN STATE */
 #nav-links.show {
   right: 0;
 }
 
+/* SIDEBAR HEADER (LOGO INSIDE SIDEBAR) */
+#nav-links::before {
+  content: "Shigosag";
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  display: block;
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+  padding-bottom: 10px;
+}
+
+/* LINKS */
 #nav-links li {
   list-style: none;
 }
 
 #nav-links a {
   text-decoration: none;
-  color: var(--dark);
+  color: white;
+  font-weight: 500;
 }
 
 #nav-links a:hover {
-  color: var(--red);
+  opacity: 0.8;
+}
+
+/* CLOSE BUTTON */
+#nav-links li[onclick] {
+  color: white;
+  font-weight: bold;
 }
 
 /* HERO */
@@ -260,24 +284,9 @@ footer {
 /* DARK MODE */
 body.dark .card,
 body.dark .stat,
-body.dark .project,
-body.dark #nav-links {
+body.dark .project {
   background: #1e1e1e !important;
   color: var(--text-dark);
-}
-
-/* BUTTON (theme toggle fallback if needed) */
-.btn {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  background: var(--red);
-  color: #fff;
-  border: none;
-  padding: 12px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  z-index: 9999;
 }
 
 /* ANIMATIONS */
@@ -301,15 +310,18 @@ body.dark #nav-links {
 
 <!-- NAVBAR -->
 <nav class="navbar">
-  <div class="logo">Shigosag</div>
-
-  <div class="nav-actions">
-    <button class="btn-small" onclick="toggleMode()">🌙 / 🌈</button>
     <div class="menu-icon" onclick="toggleMenu()">☰</div>
-  </div>
+
+    <div class="nav-actions">
+      <button class="btn-small" onclick="toggleMode()">🌙 / 🌈</button>
+    </div>
+  </nav>
   
   <ul id="nav-links">
-    <li onclick="toggleMenu()" style="cursor:pointer; margin-bottom:20px;">❌ Close</li>
+    <li class="sidebar-header">
+      <div class="logo">Shigosag</div>
+      <span onclick="toggleMenu()" style="cursor:pointer;">❌ Close</span>
+    </li>
     
     <li><a href="https://github.com/Shigosag" target="_blank">GitHub Profile</a></li>
     <li><a href="https://github.com/Shigosag/Shigosag" target="_blank">Profile README</a></li>
