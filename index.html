@@ -18,7 +18,7 @@
       "https://github.com/Shigosag/Shigosag",
       "https://github.com/Shigosag?tab=repositories",
       "https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6",
-      "https://about.me/Shigosag"
+      "https://about.me/Shigosag",
       "https://en.everybodywiki.com/Shigosag"
     ]
   }
@@ -34,7 +34,7 @@
   <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shigosag.github.io" />
-  <meta property="og:image" content="https://Shigosag.github.io/assets/rosepink_black.png/1200x630" />
+  <meta property="og:image" content="https://Shigosag.github.io/assets/rosepink_black.png" />
 
   <meta name="google-site-verification" content="LaGrHrJsvIYHFiWW0MfxQgDV_DBgHLH25xVqOlU0WjM" />
   <title>Shigosag | Developer Portfolio</title>
@@ -134,7 +134,7 @@ body.dark {
   display: flex;
   flex-direction: column;
   gap: 14px;
-  transition: right 0.3s ease;
+  transition: left 0.3s ease;
   z-index: 2000;
   box-shadow: -5px 0 20px rgba(0,0,0,0.3);
 }
@@ -234,6 +234,36 @@ header p {
   margin-top: 20px;
 }
 
+/* SKILLS TAGS */
+.skills span {
+  display: inline-block;
+  padding: 6px 10px;
+  margin: 4px;
+  border-radius: 6px;
+  background: #f1f1f1;
+  font-size: 14px;
+}
+
+/* DARK MODE FIX */
+body.dark .skills span {
+  background: #2a2a2a;
+  color: #eee;
+}
+
+/* LINKS */
+.links a{
+  display:block;
+  padding:8px 0;
+  text-decoration:none;
+  color:inherit;
+  transition:0.2s;
+}
+
+.links a:hover{
+  opacity:0.7;
+  transform: translateX(3px);
+}
+
 .card {
   background: var(--card);
   padding: 20px;
@@ -323,7 +353,6 @@ body.dark .project {
     <div class="nav-actions">
       <button class="btn-small" onclick="toggleMode()">🌙 / 🌈</button>
     </div>
-  </nav>
   
   <ul id="nav-links">
     <li onclick="toggleMenu()" style="cursor:pointer; font-size:20px;">✖</li>
@@ -366,25 +395,28 @@ body.dark .project {
 
     <div class="card" style="animation-delay:0.2s">
       <h2>💻 Skills</h2>
-        <li>React / TypeScript / Vite</li>
-        <li>Node.js / Express / Prisma</li>
-        <li>PostgreSQL / MongoDB / Python</li>
-        <li>FastAPI / Flask / Javascript</li>
-        <li>MQL4 (MetaTrader 4 - Forex EA / Trading Automation)</li>
-        <li>C / C# / C++</li>
+      
+      <div class="skills">
+        <span>React / TypeScript / Vite</span>
+        <span>Node.js / Express / Prisma</span>
+        <span>PostgreSQL / MongoDB / Python</span>
+        <span>FastAPI / Flask / JavaScript</span>
+        <span>MQL4 (Forex EA)</span>
+        <span>C / C# / C++</span>
+      </div>
     </div>
 
     <div class="card" style="animation-delay:0.3s">
       <h2>🌐 Links</h2>
-      <ul>
-        <li><a href="https://github.com/Shigosag" target="_blank">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6">LinkedIn</a></li>
-        <li><a href="https://en.everybodywiki.com/Shigosag">EverybodyWiki</a></li>
-        <li><a href="https://medium.com/@Shigosag/segun-arulogun-gabriel-shigosag-1bff58d28e17">Medium</a></li>
-        <li><a href="https://wikialpha.co/wiki/Shigosag">Wikialpha</a></li>
-      </ul>
+
+      <div class="links">
+        <a href="https://github.com/Shigosag" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6">LinkedIn</a>
+        <a href="https://en.everybodywiki.com/Shigosag">EverybodyWiki</a>
+        <a href="https://medium.com/@Shigosag/segun-arulogun-gabriel-shigosag-1bff58d28e17">Medium</a>
+        <a href="https://wikialpha.co/wiki/Shigosag">Wikialpha</a>
+      </div>
     </div>
-  </div>
 
   <!-- PROJECTS -->
   <section>
