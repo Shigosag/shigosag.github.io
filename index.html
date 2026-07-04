@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <!-- SEO SCHEMA -->
   <script type="application/ld+json">
   {
@@ -26,496 +26,195 @@
   </script>
   
   <!-- SEO -->
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems. GitHub portfolio and projects." />
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems." />
   <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
   <meta name="author" content="Segun Arulogun Gabriel" />
+  <meta name="google-site-verification" content="LaGrHrJsvIYHFiWW0MfxQgDV_DBgHLH25xVqOlU0WjM" />
   
   <!-- OpenGraph -->
   <meta property="og:title" content="Shigosag | Developer Portfolio" />
   <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shigosag.github.io" />
-  <meta property="og:image" content="https://Shigosag.github.io/assets/rosepink_black.png" />
+  <meta property="og:image" content="https://shigosag.github.io/assets/rosepink_black.png" />
 
-  <meta name="google-site-verification" content="LaGrHrJsvIYHFiWW0MfxQgDV_DBgHLH25xVqOlU0WjM" />
   <title>Shigosag | Developer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="https://shigosag.github.io/assets/rokepink_black.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="https://shigosag.github.io/assets/rosepink_black.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="https://shigosag.github.io/assets/rosepink_black.png">
+  <style>
+    :root {
+      --bg: #050505;
+      --card-bg: rgba(255, 255, 255, 0.05);
+      --primary: #22d3ee;
+      --secondary: #a855f7;
+      --text: #ffffff;
+      --text-dim: #94a3b8;
+    }
 
-<style>
-:root {
-  --red: #ff4d6d;
-  --bg: #f7f7f7;
-  --dark: #111;
-  --card: #fff;
-  --bg-dark: #121212;
-  --text-dark: #eee;
-  --sidebar: #ff4d6d;
-}
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background-color: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; overflow-x: hidden; line-height: 1.6; }
 
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-  transition: all 0.3s ease;
-}
+    /* 🌌 BACKGROUND GLOWS */
+    .glow { position: fixed; width: 400px; height: 400px; filter: blur(120px); border-radius: 50%; z-index: -1; opacity: 0.15; }
+    .glow-1 { top: -100px; left: -100px; background: var(--primary); }
+    .glow-2 { bottom: -100px; right: -100px; background: var(--secondary); }
 
-body {
-  background: var(--bg);
-  color: var(--dark);
-  line-height: 1.6;
-  padding: 20px;
-}
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
 
-body.dark {
-  background: var(--bg-dark);
-  color: var(--text-dark);
-}
+    /* 📱 NAVIGATION */
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 2rem 0; }
+    .nav-actions button { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); color: white; padding: 8px 15px; border-radius: 8px; cursor: pointer; }
 
-/* CONTAINER */
-.container {
-  max-width: 1000px;
-  margin: auto;
-}
+    /* 🔥 HERO SECTION */
+    header { text-align: center; padding: 60px 0; }
+    #logo { width: 120px; height: 120px; margin-bottom: 20px; border-radius: 50%; border: 2px solid var(--primary); }
+    .rotate { animation: rotation 10s infinite linear; }
+    @keyframes rotation { from { transform: rotate(0deg); } to { transform: rotate(359deg); } }
+    
+    .hero-title { font-size: clamp(2.5rem, 8vw, 5rem); font-weight: 800; background: linear-gradient(to right, var(--primary), var(--secondary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .hero-subtitle { font-family: 'JetBrains Mono', monospace; color: var(--text-dim); letter-spacing: 2px; margin-top: 10px; }
 
-/* NAVBAR */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 12px 20px;
-  background: var(--card);
-  border-bottom: 2px solid var(--red);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
+    /* 📊 STATS */
+    .stats { display: flex; justify-content: center; gap: 20px; margin: 20px 0; font-family: 'JetBrains Mono'; font-size: 0.9rem; }
+    .stat { padding: 10px 20px; background: var(--card-bg); border-radius: 30px; border: 1px solid rgba(255,255,255,0.1); }
 
-.navbar .logo {
-  font-weight: bold;
-  color: var(--red);
-  font-size: 18px;
-}
+    /* 🧩 GRID */
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 40px; }
+    .card { background: var(--card-bg); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 25px; backdrop-filter: blur(10px); transition: 0.3s; }
+    .card:hover { border-color: var(--primary); transform: translateY(-5px); }
+    .card h2 { color: var(--primary); margin-bottom: 15px; font-size: 1.2rem; }
 
-/* RIGHT SIDE ACTIONS */
-.nav-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-}
+    /* LINKS & TAGS */
+    .links a, .project-list a { display: block; color: var(--text-dim); text-decoration: none; margin-bottom: 8px; transition: 0.2s; font-size: 0.95rem; }
+    .links a:hover, .project-list a:hover { color: var(--primary); padding-left: 5px; }
+    .skills span { display: inline-block; background: rgba(255,255,255,0.05); padding: 4px 10px; border-radius: 4px; margin: 2px; font-size: 0.8rem; font-family: 'JetBrains Mono'; }
 
-.menu-icon {
-  font-size: 24px;
-  cursor: pointer;
-}
+    /* DYNAMIC PROJECTS */
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px; }
+    .project-card { background: var(--card-bg); border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+    .project-card img { width: 100%; height: auto; border-bottom: 1px solid rgba(255,255,255,0.1); }
+    .project-content { padding: 15px; }
+    .project-content h3 a { color: var(--primary); text-decoration: none; }
 
-/* THEME BUTTON */
-.btn-small {
-  background: var(--red);
-  color: #fff;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-/* SIDEBAR */
-#nav-links {
-  position: fixed;
-  top: 0;
-  left: -300px;
-  width: 280px;
-  height: 100%;
-  background: var(--sidebar);
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  transition: left 0.3s ease;
-  z-index: 2000;
-  box-shadow: -5px 0 20px rgba(0,0,0,0.3);
-}
-
-/* SIDEBAR HEADER */
-#nav-links::before {
-  content: "Shigosag";
-  font-size: 26px;
-  font-weight: 800;
-  display: block;
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255,255,255,0.25);
-
-  background: linear-gradient(90deg, #6a0dad, #000000, #ff00ff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* OPEN STATE */
-#nav-links.show {
-  left: 0;
-}
-
-/* LINKS */
-#nav-links li {
-  list-style: none;
-}
-
-#nav-links a {
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-}
-
-#nav-links a:hover {
-  opacity: 0.8;
-}
-
-/* CLOSE BUTTON */
-#nav-links li[onclick] {
-  color: white;
-  font-weight: bold;
-}
-
-/* HERO */
-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 4px;
-  margin-bottom: 10px;
-  animation: fadeDown 1s ease forwards;
-}
-  
-header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-header img.rotate {
-  animation: spinLogo 2s linear infinite;
-}
-
-header h1 {
-  color: var(--red);
-  font-size: 2.5em;
-  margin-bottom: 5px;
-}
-
-header p {
-  color: #666;
-  font-size: 1.1em;
-}
-
-/* STATS */
-.stats {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-.stat {
-  background: var(--card);
-  padding: 10px 15px;
-  border-left: 4px solid var(--red);
-  border-radius: 10px;
-}
-
-/* GRID CARDS */
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-/* SKILLS TAGS */
-.skills span {
-  display: inline-block;
-  padding: 6px 10px;
-  margin: 4px;
-  border-radius: 6px;
-  background: #f1f1f1;
-  font-size: 14px;
-}
-
-/* DARK MODE FIX */
-body.dark .skills span {
-  background: #2a2a2a;
-  color: #eee;
-}
-
-/* LINKS */
-.links a{
-  display:block;
-  padding:8px 0;
-  text-decoration:none;
-  color:inherit;
-  transition:0.2s;
-}
-
-.links a:hover{
-  opacity:0.7;
-  transform: translateX(3px);
-}
-
-.card {
-  background: var(--card);
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-  border-left: 4px solid var(--red);
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.6s forwards;
-}
-
-/* COLOURED MODE */
-.card.gradient1 { background: linear-gradient(to right, #ff7e5f, #feb47b); }
-.card.gradient2 { background: linear-gradient(to right, #6a11cb, #2575fc); }
-.card.gradient3 { background: linear-gradient(to right, #43cea2, #185a9d); }
-
-/* PROJECT CARDS */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 15px;
-  margin-top: 20px;
-}
-
-.project {
-  background: var(--card);
-  border-radius: 12px;
-  overflow: hidden;
-  border-left: 4px solid var(--red);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-}
-
-.project img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-}
-
-.project .content {
-  padding: 15px;
-}
-
-/* FOOTER */
-footer {
-  text-align: center;
-  margin-top: 30px;
-  color: gray;
-  font-size: 0.9em;
-}
-
-/* DARK MODE */
-body.dark .card,
-body.dark .stat,
-body.dark .project {
-  background: #1e1e1e !important;
-  color: var(--text-dark);
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes spinLogo {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-</style>
-
+    footer { text-align: center; padding: 60px 0; color: var(--text-dim); border-top: 1px solid rgba(255,255,255,0.05); margin-top: 60px; font-size: 0.85rem; }
+  </style>
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  <div class="glow glow-1"></div>
+  <div class="glow glow-2"></div>
 
-    <div class="nav-actions">
-      <button class="btn-small" onclick="toggleMode()">🌙 / 🌈</button>
-    </div>
-  </nav>
+  <div class="container">
+    <nav>
+      <div style="font-weight: bold;">SHIGOSAG</div>
+      <div class="nav-actions">
+        <button onclick="alert('Toggle Mode')">🌙 / 🌈</button>
+      </div>
+    </nav>
 
-  <!-- SIDEBAR MENU -->
-  <ul id="nav-links">
-    <li onclick="toggleMenu()" style="cursor:pointer; font-size:20px;">✖</li>
-    
-    <li><a href="https://github.com/Shigosag" target="_blank">GitHub Profile</a></li>
-    <li><a href="https://github.com/Shigosag/Shigosag" target="_blank">Profile README</a></li>
-    <li><a href="https://github.com/Shigosag?tab=repositories" target="_blank">Repositories</a></li>
-
-    <li class="divider">Featured Projects</li>
-
-    <li><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">POS System</a></li>
-    <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">Business Management System</a></li>
-    <li><a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank">Enterprise Business Management System</a></li>
-    <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">SaaS Dashboard</a></li>
-    <li><a href="https://github.com/Shigosag/AnalyticsCLI" target="_blank">Data Analysis CLI</a></li>
-    <li><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank">E-commerce Platform</a></li>
-    <li><a href="https://github.com/Shigosag/Shigosag-Dashboard" target="_blank">Dashboard</a></li>
-    <li><a href="https://github.com/Shigosag/ShigosagDB" target="_blank">Database Engine</a></li>
-    <li><a href="https://github.com/Shigosag/Mini-Shell" target="_blank">Mini OS Shell Terminal</a></li>
-  </ul>
-
-<div class="container">
-
-  <header>
-    <img src="https://shigosag.github.io/assets/rosepink_black.png" alt="Shigosag Logo" class="rotate" id="logo">
-    <h1>Shigosag</h1>
-    <p>Segun Arulogun Gabriel • Full-Stack Developer</p>
-  </header>
-
-  <p><strong>Shigosag</strong> is a Full-Stack Developer building modern software systems and GitHub projects.</p>
-
-  <a href="#projects">View Shigosag Projects</a>
-
-  <!-- STATS -->
-  <div class="stats">
-    <div class="stat" id="repos">📦 Repos: Loading...</div>
-    <div class="stat" id="followers">👥 Followers: Loading...</div>
-  </div>
-
-  <!-- ABOUT / SKILLS / LINKS -->
-  <div class="grid">
-    <div class="card" style="animation-delay:0.1s">
-      <h2>👋 About</h2>
-      <p>Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications.</p>
-    </div>
-
-    <div class="card" style="animation-delay:0.2s">
-      <h2>💻 Skills</h2>
+    <header>
+      <img src="https://shigosag.github.io/assets/rosepink_black.png" alt="Shigosag Logo" class="rotate" id="logo">
+      <h1 class="hero-title">Shigosag</h1>
+      <p class="hero-subtitle">Segun Arulogun Gabriel</p>
+      <p style="margin-top:20px; color: var(--text-dim);">Full-Stack Developer leveraging AI-assisted workflows to build scalable applications.</p>
       
-      <div class="skills">
-        <span>React / TypeScript / Vite</span>
-        <span>Node.js / Express / Prisma</span>
-        <span>PostgreSQL / MongoDB / Python</span>
-        <span>FastAPI / Flask / JavaScript</span>
-        <span>MQL4 (Forex EA)</span>
-        <span>C / C# / C++</span>
+      <div class="stats">
+        <div class="stat" id="repos">📦 Repos: Loading...</div>
+        <div class="stat" id="followers">👥 Followers: Loading...</div>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- ABOUT -->
+      <div class="card">
+        <h2>👋 About</h2>
+        <p style="font-size: 0.95rem; color: var(--text-dim);">Full-Stack Developer building modern software systems. Focused on SaaS, CLI tools, and automation.</p>
+        <div class="project-list" style="margin-top: 15px;">
+           <a href="https://github.com/Shigosag" target="_blank">→ GitHub Profile</a>
+           <a href="https://github.com/Shigosag/Shigosag" target="_blank">→ Profile README</a>
+           <a href="https://github.com/Shigosag?tab=repositories" target="_blank">→ Repositories</a>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="card">
+        <h2>💻 Skills</h2>
+        <div class="skills">
+          <span>React</span> <span>TypeScript</span> <span>Vite</span> <span>Node.js</span>
+          <span>Express</span> <span>Prisma</span> <span>PostgreSQL</span> <span>MongoDB</span>
+          <span>Python</span> <span>FastAPI</span> <span>Flask</span> <span>JavaScript</span>
+          <span>MQL4</span> <span>C</span> <span>C#</span> <span>C++</span>
+        </div>
+      </div>
+
+      <!-- FEATURED -->
+      <div class="card">
+        <h2>🚀 Featured Projects</h2>
+        <div class="project-list">
+          <a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">POS System</a>
+          <a href="https://github.com/Shigosag/Business-Management-System" target="_blank">Business Management</a>
+          <a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank">Nexus ERP</a>
+          <a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">Saasflow Pro</a>
+          <a href="https://github.com/Shigosag/Mini-Shell" target="_blank">Mini OS Shell</a>
+        </div>
       </div>
     </div>
 
-    <div class="card" style="animation-delay:0.3s">
-      <h2>🌐 Links</h2>
-
-      <div class="links">
+    <!-- LINKS CARD -->
+    <div class="card" style="margin-top:20px;">
+      <h2>🌐 Professional Links</h2>
+      <div class="links" style="display: flex; flex-wrap: wrap; gap: 20px;">
         <a href="https://github.com/Shigosag" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6">LinkedIn</a>
-        <a href="https://en.everybodywiki.com/Shigosag">EverybodyWiki</a>
-        <a href="https://medium.com/@Shigosag/segun-arulogun-gabriel-shigosag-1bff58d28e17">Medium</a>
-        <a href="https://wikialpha.co/wiki/Shigosag">Wikialpha</a>
+        <a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank">LinkedIn</a>
+        <a href="https://en.everybodywiki.com/Shigosag" target="_blank">EverybodyWiki</a>
+        <a href="https://medium.com/@Shigosag/segun-arulogun-gabriel-shigosag-1bff58d28e17" target="_blank">Medium</a>
+        <a href="https://wikialpha.co/wiki/Shigosag" target="_blank">Wikialpha</a>
       </div>
     </div>
+
+    <!-- DYNAMIC GITHUB PROJECTS -->
+    <section id="projects" style="margin-top: 60px;">
+      <h2 style="text-align: center; margin-bottom: 10px;">GitHub Starred Projects</h2>
+      <p style="text-align: center; color: var(--text-dim); margin-bottom: 30px;">Automatically synced from GitHub</p>
+      <div class="projects-grid" id="projects-container"></div>
+    </section>
+
+    <footer>
+      © 2026 Shigosag | Built with GitHub Pages
+      <p style="font-size: 0.7rem; margin-top: 10px;">URL: https://shigosag.github.io</p>
+    </footer>
   </div>
-    
-  <!-- PROJECTS -->
-  <section>
-    <h2 style="margin-top:30px;">🚀 GitHub Projects</h2>
 
-    <p>
-      Explore my open-source software projects on GitHub, including POS systems, SaaS dashboards,
-      CLI tools, automation systems, and business management system built with modern web technologies.
-    </p>
+  <script>
+    const user = 'Shigosag';
 
-    <div class="projects" id="projects"></div>
-  </section>
-
-  <footer>
-    © 2026 Shigosag | Built with GitHub Pages
-    <p>GitHub: https://github.com/Shigosag</p>
-  </footer>
-
-</div>
-
-<script>
-const user = "Shigosag";
-
-/* MULTI-MODE TOGGLE */
-let mode = 0; // 0=default, 1=dark, 2=gradient
-function toggleMode() {
-  mode = (mode + 1) % 3;
-  document.body.classList.remove('dark');
-  document.querySelectorAll('.card').forEach((c,i)=>{
-    c.classList.remove('gradient1','gradient2','gradient3');
-  });
-
-  if(mode === 1) {
-    document.body.classList.add('dark');
-  } else if(mode === 2) {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((c,i)=>{
-      const g = ['gradient1','gradient2','gradient3'];
-      c.classList.add(g[i % g.length]);
+    /* Fetch GitHub Stats */
+    fetch(`https://api.github.com/users/${user}`)
+    .then(res=>res.json())
+    .then(d=>{
+      document.getElementById("repos").innerText = "📦 Repos: " + (d.public_repos || 0);
+      document.getElementById("followers").innerText = "👥 Followers: " + (d.followers || 0);
     });
-  }
-}
 
-/* LOGO ROTATION TOGGLE */
-let spinning = true;
-const logo = document.getElementById('logo');
-logo.addEventListener('click', ()=>{
-  spinning = !spinning;
-  logo.classList.toggle('rotate', spinning);
-});
-
-/* Fetch GitHub Stats */
-fetch(`https://api.github.com/users/${user}`)
-.then(res=>res.json())
-.then(d=>{
-  document.getElementById("repos").innerText = "📦 Repos: " + d.public_repos;
-  document.getElementById("followers").innerText = "👥 Followers: " + d.followers;
-});
-
-/* Fetch Repos for Projects */
-fetch(`https://api.github.com/users/${user}/starred`)
-.then(res=>res.json())
-.then(data=>{
-  const box = document.getElementById("projects");
-  data.reverse().slice(0,6).forEach((repo,i)=>{
-    const div = document.createElement("div");
-    div.className = "project";
-    div.style.animationDelay = (0.2*i) + "s";
-    div.innerHTML = `
-      <img src="https://opengraph.githubassets.com/1/${user}/${repo.name}" />
-      <div class="content">
-        <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
-        <p>${repo.description || "No description"}</p>
-        ⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}
-      </div>
-    `;
-    box.appendChild(div);
-  });
-});
-
-function toggleMenu(){
-  document.getElementById("nav-links").classList.toggle("show");
-}
-</script>
-
+    /* Fetch Starred Repos for Projects */
+    fetch(`https://api.github.com/users/${user}/starred`)
+    .then(res=>res.json())
+    .then(data=>{
+      const box = document.getElementById("projects-container");
+      data.reverse().slice(0,6).forEach((repo, i)=>{
+        const div = document.createElement("div");
+        div.className = "project-card";
+        div.innerHTML = `
+          <img src="https://opengraph.githubassets.com/1/${user}/${repo.name}" alt="${repo.name}">
+          <div class="project-content">
+            <h3><a href="${repo.html_url}" target="_blank">${repo.name}</a></h3>
+            <p style="font-size:0.85rem; color:var(--text-dim); margin:10px 0;">${repo.description || "No description available"}</p>
+            <div style="font-size:0.8rem; color:var(--primary);">⭐ ${repo.stargazers_count} | 🍴 ${repo.forks_count}</div>
+          </div>
+        `;
+        box.appendChild(div);
+      });
+    });
+  </script>
 </body>
 </html>
