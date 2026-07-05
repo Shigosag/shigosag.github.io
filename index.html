@@ -26,7 +26,7 @@
   </script>
   
   <!-- SEO -->
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems. GitHub portfolio and projects." />
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems." />
   <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
   <meta name="author" content="Segun Arulogun Gabriel" />
   
@@ -64,65 +64,105 @@
 
         /* Sticky Navbar */
         nav {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px); border-bottom: 1px solid var(--glass);
-            display: flex; justify-content: center; align-items: center; padding: 0.8rem 5%; gap: 1.5rem;
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.85); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass);
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            padding: 0.8rem 5%;
+            gap: 1.5rem;
         }
 
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center;}
         .nav-links a { 
-            text-decoration: none; color: #888; font-size: 0.85rem; 
-            transition: 0.3s; font-weight: 500; padding-bottom: 4px;
+            text-decoration: none; 
+            color: #888; 
+            font-size: 0.85rem; 
+            transition: 0.3s; 
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding-bottom: 4px;
             border-bottom: 2px solid transparent;
-            display: flex; align-items: center; gap: 6px;
-        }
-        
-        .nav-links a.active, .nav-links a:hover { 
-            color: var(--primary); border-bottom-color: var(--primary);
         }
 
         .nav-links svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
+        
+        .nav-links a.active, .nav-links a:hover { 
+            color: var(--primary); 
+            border-bottom-color: var(--primary);
+        }
 
         /* Hero Section */
         header {
-            position: relative; height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center; overflow: hidden;
+            position: relative;
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            overflow: hidden;
         }
 
-        /* Neon Arch (Semi-circle crown) */
-        .neon-arch {
-            position: absolute; width: 400px; height: 200px;
-            border-top: 3px solid var(--primary); border-radius: 200px 200px 0 0;
-            top: 22%; filter: blur(1px) drop-shadow(0 0 10px var(--primary));
-            opacity: 0.6; pointer-events: none;
-        }
-
-        /* Glowing Gradient Divider */
-        .glow-divider {
-            width: 180px; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--secondary), var(--primary), var(--secondary), transparent);
-            margin: 15px auto; box-shadow: 0 0 15px var(--primary);
-            border-radius: 2px;
-        }
-
+        /* Large Glow Orb */
         .glow-orb {
-            position: absolute; width: 600px; height: 600px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.4) 0%, rgba(188, 19, 254, 0.25) 50%, transparent 70%);
-            border-radius: 50%; filter: blur(80px); z-index: -1;
-            pointer-events: none; animation: orb-pulse 6s infinite ease-in-out;
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.3) 0%, rgba(188, 19, 254, 0.15) 50%, transparent 70%);
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: -1;
+            pointer-events: none;
+            animation: orb-pulse 6s infinite ease-in-out;
         }
 
         @keyframes orb-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.7; }
-            50% { transform: scale(1.3); opacity: 1; }
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.2); opacity: 0.9; }
+        }
+
+        /* Neon Arch / Gradient Arch */
+        .neon-arch {
+            width: min(300px, 70vw);
+            height: 100px;
+            border: 3px solid transparent;
+            border-top: 4px solid var(--primary);
+            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+            position: absolute;
+            top: calc(50% - 110px); /* Positioned above title */
+            filter: drop-shadow(0 0 15px var(--primary));
+            opacity: 0.8;
+            pointer-events: none;
         }
 
         .title-glitch {
-            font-size: clamp(3rem, 10vw, 6rem); font-weight: 900;
+            font-size: clamp(3rem, 10vw, 6rem);
+            font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            animation: pulse 3s infinite; position: relative; z-index: 10;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 3s infinite;
+            z-index: 10;
+        }
+
+        /* Gradient Divider under name */
+        .name-divider {
+            width: 120px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, var(--secondary), var(--accent), transparent);
+            margin: 15px auto;
+            border-radius: 2px;
+            box-shadow: 0 0 15px var(--secondary);
         }
 
         @keyframes pulse {
@@ -130,30 +170,43 @@
             50% { opacity: 0.8; filter: drop-shadow(0 0 20px var(--secondary)); }
         }
 
+        /* Terminal Window Style */
         .terminal-card {
-            background: var(--card-bg); border: 1px solid var(--glass);
-            border-radius: 10px; overflow: hidden; margin-bottom: 2rem;
-            backdrop-filter: blur(10px); transition: 0.3s ease;
+            background: var(--card-bg);
+            border: 1px solid var(--glass);
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
         .terminal-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-        .target-flash { animation: flash-glow 1.5s ease-out; }
+        .target-flash {
+            animation: flash-glow 1.5s ease-out;
+        }
+
         @keyframes flash-glow {
-            0% { box-shadow: 0 0 0px transparent; }
+            0% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
             30% { box-shadow: 0 0 30px var(--primary); border-color: var(--primary); }
-            100% { box-shadow: 0 0 0px transparent; }
+            100% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
         }
 
         .terminal-header {
-            background: rgba(255, 255, 255, 0.1); padding: 10px 15px;
-            display: flex; gap: 8px; align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 15px;
+            display: flex; gap: 8px;
+            align-items: center;
         }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
         .terminal-body { padding: 2rem; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
-        section, header { scroll-margin-top: 100px; }
+        
+        section, header {
+            scroll-margin-top: 100px;
+        }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
@@ -172,15 +225,20 @@
         .btn-glow:hover { box-shadow: 0 0 20px var(--primary); }
 
         .list-unstyled { list-style: none; }
-        .list-unstyled li { margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
-        .list-unstyled a { color: var(--text); text-decoration: none; transition: 0.2s; }
-        .list-unstyled a:hover { color: var(--secondary); }
+        .list-unstyled li { margin-bottom: 10px; display: flex; align-items: center; gap: 8px;}
+        .list-unstyled a { color: var(--text); text-decoration: none; border-bottom: 1px solid transparent; }
+        .list-unstyled a:hover { border-bottom: 1px solid var(--secondary); color: var(--secondary); }
+
+        .section-header-flex { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+        .section-header-flex svg { width: 24px; height: 24px; stroke: var(--primary); stroke-width: 2; fill: none; }
 
         footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
-            .neon-arch { width: 300px; }
-            .nav-links span { display: none; } /* Show only icons on mobile */
+        @media (max-width: 480px) {
+            .nav-links { gap: 0.6rem; }
+            .nav-links a span { display: none; } /* Hide text on very small screens to keep icons */
+            .nav-links a { font-size: 0.75rem; }
+            .neon-arch { top: calc(50% - 90px); height: 70px; }
         }
     </style>
 </head>
@@ -191,44 +249,38 @@
     <nav>
         <ul class="nav-links">
             <li><a href="#home" class="active">
-                <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                <span>Home</span>
-            </a></li>
+                <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                <span>Home</span></a></li>
             <li><a href="#about">
-                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
-                <span>About</span>
-            </a></li>
+                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                <span>About</span></a></li>
             <li><a href="#projects">
-                <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
-                <span>Projects</span>
-            </a></li>
+                <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                <span>Projects</span></a></li>
             <li><a href="#skills">
-                <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
-                <span>Skills</span>
-            </a></li>
+                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                <span>Skills</span></a></li>
             <li><a href="#links">
-                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                <span>Links</span>
-            </a></li>
+                <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                <span>Links</span></a></li>
         </ul>
-        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem">🌙</button>
+        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; margin-left: 10px;">🌙</button>
     </nav>
 
     <header id="home">
         <div class="glow-orb"></div>
+        <!-- The Neon Arch -->
         <div class="neon-arch"></div>
         
         <h1 class="title-glitch">Shigosag</h1>
+        <p style="letter-spacing: 5px; color: #888; margin-top: 10px; font-weight: 600;">SEGUN ARULOGUN GABRIEL</p>
         
-        <p style="letter-spacing: 5px; color: #fff; margin-top: 10px; font-weight: 600;">SEGUN ARULOGUN GABRIEL</p>
-        
-        <!-- Glowing Divider -->
-        <div class="glow-divider"></div>
+        <!-- The Gradient Divider -->
+        <div class="name-divider"></div>
 
         <p style="margin-top: 10px; color: #aaa; max-width: 600px;">
             Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
         </p>
-        
         <div style="margin-top: 30px; display: flex; gap: 15px;">
             <a href="#projects" class="btn-glow">View Projects</a>
             <a href="https://github.com/Shigosag" target="_blank" class="btn-glow" style="background:transparent; border:1px solid #fff; color:#fff">GitHub</a>
@@ -242,7 +294,10 @@
                 <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">about.txt</span>
             </div>
             <div class="terminal-body">
-                <h2 style="margin-bottom: 1rem; color: var(--primary);">👋 About Me</h2>
+                <div class="section-header-flex">
+                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <h2 style="color: var(--primary);">About Me</h2>
+                </div>
                 <p style="font-size: 1.1rem; line-height: 1.8;">
                     Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications.
                 </p>
@@ -251,7 +306,10 @@
     </section>
 
     <section class="container" id="projects">
-        <h2 style="margin-bottom: 2rem; color: var(--primary);">~/Featured-Projects</h2>
+        <div class="section-header-flex">
+            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <h2 style="color: var(--primary);">~/Featured-Projects</h2>
+        </div>
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
@@ -283,7 +341,10 @@
                 <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">skills.sh</span>
             </div>
             <div class="terminal-body">
-                <h2 style="margin-bottom: 1rem; color: var(--primary);">💻 Technical Stack</h2>
+                <div class="section-header-flex">
+                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+                    <h2 style="color: var(--primary);">Technical Stack</h2>
+                </div>
                 <div class="skills">
                     <span class="skills-tag">React / TypeScript / Vite</span>
                     <span class="skills-tag">Node.js / Express / Prisma</span>
@@ -301,10 +362,10 @@
             <div class="terminal-card">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <h3 style="color: var(--primary); display: flex; align-items: center; gap: 8px;">
-                        <svg style="width:20px; stroke:currentColor; fill:none; stroke-width:2;" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
-                        Presence
-                    </h3>
+                    <div class="section-header-flex">
+                        <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        <h3 style="color: var(--primary);">Presence</h3>
+                    </div>
                     <ul class="list-unstyled" style="margin-top:1rem">
                         <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank">LinkedIn</a></li>
                         <li><a href="https://en.everybodywiki.com/Shigosag" target="_blank">EverybodyWiki</a></li>
@@ -316,10 +377,11 @@
             <div class="terminal-card" style="border-color: var(--secondary);">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <h3 style="color: var(--secondary); display: flex; align-items: center; gap: 8px;">
-                        <svg style="width:20px; stroke:currentColor; fill:none; stroke-width:2;" viewBox="0 0 24 24"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
-                        GitHub Stats
-                    </h3>
+                    <div class="section-header-flex">
+                        <!-- Chart SVG Icon instead of emoji -->
+                        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        <h3 style="color: var(--secondary);">GitHub Stats</h3>
+                    </div>
                     <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" style="width:100%; margin-top:1rem; border-radius:5px;">
                 </div>
             </div>
