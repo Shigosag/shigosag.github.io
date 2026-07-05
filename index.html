@@ -77,24 +77,24 @@
             justify-content: center; 
             align-items: center;
             padding: 0.8rem 5%;
-            gap: 1.5rem;
+            gap: 1rem;
         }
 
-        .nav-links { display: flex; gap: 1.2rem; list-style: none; align-items: center; }
+        .nav-links { display: flex; gap: 0.8rem; list-style: none; align-items: center; }
         .nav-links a { 
             text-decoration: none; 
             color: #888; 
-            font-size: 0.85rem; 
+            font-size: 0.8rem; 
             transition: 0.3s; 
             font-weight: 500;
-            padding: 5px 8px;
+            padding: 5px 6px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 4px;
             border-radius: 6px;
         }
 
-        .nav-links svg { width: 16px; height: 16px; stroke-width: 2px; }
+        .nav-links svg { width: 14px; height: 14px; stroke-width: 2.5px; }
         
         .nav-links a.active, .nav-links a:hover { 
             color: var(--primary); 
@@ -114,27 +114,36 @@
             padding: 0 20px;
         }
 
-        /* THE NEON ARCH - Semi circle above title */
-        .neon-arch {
-            width: clamp(200px, 45vw, 420px); /* Responsive width to match title */
-            height: 40px;
-            border-top: 3px solid var(--primary);
-            border-radius: 100% 100% 0 0 / 100% 100% 0 0;
-            filter: drop-shadow(0 -5px 12px var(--primary));
-            margin-bottom: -10px; /* Very close to title */
-            opacity: 0.8;
+        /* Hero Title Container to anchor the Arch precisely */
+        .hero-title-wrapper {
             position: relative;
-            z-index: 2;
+            display: inline-block;
+            margin-bottom: 10px;
         }
 
-        /* THE GRADIENT DIVIDER - Below subtitle */
+        /* THE NEON ARCH - Anchored to Title Width */
+        .hero-title-wrapper::before {
+            content: "";
+            position: absolute;
+            top: -15px; /* Distance from top of letters */
+            left: 0;
+            right: 0;
+            height: 35px;
+            border-top: 3px solid var(--primary);
+            border-radius: 50% 50% 0 0;
+            filter: drop-shadow(0 0 8px var(--primary));
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /* THE GRADIENT DIVIDER - Short and Intense like screenshot */
         .grad-divider {
-            width: 120px;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), var(--accent), transparent);
-            margin: 20px auto;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            margin: 15px auto;
             border-radius: 10px;
-            box-shadow: 0 0 15px var(--secondary);
+            box-shadow: 0 0 12px var(--secondary);
         }
 
         /* Large Glow Orb background */
@@ -156,18 +165,20 @@
         }
 
         .title-glitch {
-            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-size: clamp(3.5rem, 12vw, 7rem);
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: pulse 3s infinite;
-            line-height: 1;
+            line-height: 0.9;
+            position: relative;
+            z-index: 2;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px var(--primary)); }
-            50% { opacity: 0.8; filter: drop-shadow(0 0 15px var(--secondary)); }
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px var(--primary)); }
+            50% { opacity: 0.8; filter: drop-shadow(0 0 12px var(--secondary)); }
         }
 
         .terminal-card {
@@ -232,9 +243,9 @@
         footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; border-top: 1px solid var(--glass); }
 
         @media (max-width: 600px) {
-            .nav-links { gap: 0.5rem; }
-            .nav-links a span { display: none; } /* Hide text on very small screens if needed, but keeping for now */
-            .nav-links a { font-size: 0.7rem; gap: 4px; padding: 4px; }
+            .nav-links { gap: 0.4rem; }
+            .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px 5px; }
+            .nav-links svg { width: 12px; height: 12px; }
         }
     </style>
 </head>
@@ -265,20 +276,18 @@
                 <span>Links</span></a>
             </li>
         </ul>
-        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; margin-left:10px">🌙</button>
+        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.1rem; margin-left:5px">🌙</button>
     </nav>
 
     <header id="home">
         <div class="glow-orb"></div>
         
-        <!-- NEW NEON ARCH -->
-        <div class="neon-arch"></div>
+        <div class="hero-title-wrapper">
+            <h1 class="title-glitch">Shigosag</h1>
+        </div>
         
-        <h1 class="title-glitch">Shigosag</h1>
+        <p style="letter-spacing: 5px; color: #888; margin-top: 5px; font-weight: 500; font-size: 0.9rem;">SEGUN ARULOGUN GABRIEL</p>
         
-        <p style="letter-spacing: 5px; color: #888; margin-top: 10px; font-weight: 500;">SEGUN ARULOGUN GABRIEL</p>
-        
-        <!-- NEW GRADIENT DIVIDER -->
         <div class="grad-divider"></div>
 
         <p style="margin-top: 10px; color: #aaa; max-width: 600px; font-size: 1.1rem;">
@@ -382,7 +391,6 @@
                 </div>
             </div>
             <div class="terminal-card" style="border-color: var(--secondary);">
-                <!-- REPLACED EMOJI WITH CHART SVG ICON -->
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:10px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
