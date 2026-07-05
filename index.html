@@ -26,7 +26,7 @@
   </script>
   
   <!-- SEO -->
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems. GitHub portfolio and projects." />
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems. GitHub portfolio and projects." />
   <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
   <meta name="author" content="Segun Arulogun Gabriel" />
   
@@ -64,46 +64,70 @@
 
         /* Sticky Navbar */
         nav {
-            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
-            background: rgba(5, 5, 5, 0.85); backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
-            display: flex; justify-content: space-between; align-items: center;
+            position: fixed; 
+            top: 0; 
+            left: 0;
+            width: 100%; 
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.85); 
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--glass);
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
             padding: 1rem 5%;
         }
 
-        .nav-links { display: flex; gap: 1.8rem; list-style: none; }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
         .nav-links a { 
-            text-decoration: none; color: #888; font-size: 0.9rem; 
-            transition: all 0.3s ease; font-weight: 600;
-            padding-bottom: 4px; border-bottom: 2px solid transparent;
+            text-decoration: none; 
+            color: #888; 
+            font-size: 0.9rem; 
+            transition: 0.3s; 
+            font-weight: 500;
+            padding-bottom: 4px;
+            border-bottom: 2px solid transparent;
         }
-        .nav-links a:hover, .nav-links a.active { 
+        
+        /* Active Link Highlight */
+        .nav-links a.active, .nav-links a:hover { 
             color: var(--primary); 
             border-bottom-color: var(--primary);
-            text-shadow: 0 0 8px rgba(0, 242, 255, 0.6);
         }
 
-        /* Hero Section */
+        /* Hero Section & Glow Orb */
         header {
-            min-height: 100vh; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; text-align: center;
-            position: relative; padding: 6rem 2rem 2rem;
+            position: relative;
+            height: 100vh; 
+            display: flex; 
+            flex-direction: column;
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+            overflow: hidden;
         }
 
-        /* Glow Orb behind title */
+        /* Circular Glow Orb Behind Title */
         .glow-orb {
             position: absolute;
-            width: 45vw; height: 45vw;
-            max-width: 450px; max-height: 450px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.22) 0%, rgba(188, 19, 254, 0.15) 50%, transparent 70%);
+            width: 350px;
+            height: 350px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.25) 0%, rgba(188, 19, 254, 0.15) 50%, transparent 70%);
             border-radius: 50%;
             filter: blur(50px);
             z-index: -1;
             pointer-events: none;
+            animation: orb-pulse 6s infinite ease-in-out;
+        }
+
+        @keyframes orb-pulse {
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
         }
 
         .title-glitch {
-            font-size: clamp(3.5rem, 10vw, 6.5rem);
+            font-size: clamp(3rem, 10vw, 6rem);
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
@@ -112,14 +136,11 @@
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.4)); }
-            50% { opacity: 0.85; filter: drop-shadow(0 0 25px rgba(188, 19, 254, 0.6)); }
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px var(--primary)); }
+            50% { opacity: 0.8; filter: drop-shadow(0 0 20px var(--secondary)); }
         }
 
         /* Terminal Window Style */
-        section { scroll-margin-top: 90px; }
-        .container { max-width: 1100px; margin: 0 auto; padding: 3.5rem 2rem; }
-        
         .terminal-card {
             background: var(--card-bg);
             border: 1px solid var(--glass);
@@ -129,52 +150,60 @@
             backdrop-filter: blur(10px);
             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .terminal-card:hover { transform: translateY(-4px); border-color: var(--primary); }
+        .terminal-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-        /* Target Highlight Glow Animation */
-        .section-focus {
-            animation: targetGlow 1.8s ease-out;
+        /* Target Highlight Flash Effect */
+        .target-flash {
+            animation: flash-glow 1.5s ease-out;
         }
 
-        @keyframes targetGlow {
-            0% { box-shadow: 0 0 0px var(--primary); border-color: var(--glass); }
-            30% { box-shadow: 0 0 35px rgba(0, 242, 255, 0.8); border-color: var(--primary); }
+        @keyframes flash-glow {
+            0% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
+            30% { box-shadow: 0 0 30px var(--primary); border-color: var(--primary); }
             100% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
         }
 
         .terminal-header {
-            background: rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.1);
             padding: 10px 15px;
-            display: flex; gap: 8px; align-items: center;
+            display: flex; gap: 8px;
+            align-items: center;
         }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
 
-        .terminal-body { padding: 2.2rem; }
+        .terminal-body { padding: 2rem; }
+
+        /* Content Sections */
+        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+        
+        /* Adjust scrolling distance so headers don't hide under the sticky navbar */
+        section, header {
+            scroll-margin-top: 80px;
+        }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
         .skills-tag {
-            display: inline-block; padding: 6px 14px; margin: 5px;
+            display: inline-block; padding: 5px 12px; margin: 5px;
             background: var(--glass); border: 1px solid var(--primary);
-            border-radius: 6px; color: var(--primary); font-size: 0.85rem;
-            font-weight: 500;
+            border-radius: 5px; color: var(--primary); font-size: 0.8rem;
         }
 
         .btn-glow {
-            padding: 12px 26px; border-radius: 8px; border: none;
+            padding: 12px 25px; border-radius: 8px; border: none;
             background: var(--primary); color: #000; font-weight: bold;
             cursor: pointer; transition: 0.3s; text-decoration: none;
             display: inline-block; margin-top: 1rem;
         }
-        .btn-glow:hover { box-shadow: 0 0 20px var(--primary); transform: scale(1.03); }
+        .btn-glow:hover { box-shadow: 0 0 20px var(--primary); }
 
         .list-unstyled { list-style: none; }
-        .list-unstyled li { margin-bottom: 12px; }
-        .list-unstyled a { color: var(--text); text-decoration: none; transition: 0.2s; }
-        .list-unstyled a:hover { color: var(--primary); padding-left: 5px; }
+        .list-unstyled li { margin-bottom: 10px; }
+        .list-unstyled a { color: var(--text); text-decoration: none; border-bottom: 1px solid transparent; }
+        .list-unstyled a:hover { border-bottom: 1px solid var(--secondary); color: var(--secondary); }
 
-        footer { text-align: center; padding: 4rem 2rem; color: #666; font-size: 0.85rem; border-top: 1px solid var(--glass); }
+        footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; }
     </style>
 </head>
 <body>
@@ -182,7 +211,7 @@
     <canvas id="particles"></canvas>
 
     <nav>
-        <div class="logo" style="font-weight:900; letter-spacing:1px; color:var(--primary);">SHIGOSAG.DEV</div>
+        <div class="logo" style="font-weight:bold; color:var(--primary)">SHIGOSAG DEV</div>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -190,19 +219,21 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#links">Links</a></li>
         </ul>
-        <button onclick="toggleMode()" aria-label="Toggle Theme Mode" style="background:none; border:none; cursor:pointer; font-size:1.2rem;">🌙</button>
+        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem">🌙</button>
     </nav>
 
     <header id="home">
+        <!-- Glow Orb Behind Title -->
         <div class="glow-orb"></div>
+        
         <h1 class="title-glitch">Shigosag</h1>
-        <p style="letter-spacing: 5px; color: #999; font-weight: 600; margin-top: 10px;">SEGUN ARULOGUN GABRIEL</p>
-        <p style="margin-top: 20px; color: #bbb; max-width: 600px; font-size: 1.05rem;">
+        <p style="letter-spacing: 5px; color: #888; margin-top: 10px;">SEGUN ARULOGUN GABRIEL</p>
+        <p style="margin-top: 20px; color: #aaa; max-width: 600px;">
             Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
         </p>
         <div style="margin-top: 30px; display: flex; gap: 15px;">
             <a href="#projects" class="btn-glow">View Projects</a>
-            <a href="https://github.com/Shigosag" target="_blank" rel="noopener noreferrer" class="btn-glow" style="background:transparent; border:1px solid #fff; color:#fff;">GitHub</a>
+            <a href="https://github.com/Shigosag" target="_blank" class="btn-glow" style="background:transparent; border:1px solid #fff; color:#fff">GitHub</a>
         </div>
     </header>
 
@@ -210,36 +241,38 @@
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.75rem; color: #888; margin-left: 10px;">about.md</span>
+                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">about.txt</span>
             </div>
             <div class="terminal-body">
-                <h2 style="margin-bottom: 1rem; color: var(--primary);">👋 About</h2>
-                <p style="color: #ccc; font-size: 1.05rem; line-height: 1.8;">Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications.</p>
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">👋 About Me</h2>
+                <p style="font-size: 1.1rem; line-height: 1.8;">
+                    Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications.
+                </p>
             </div>
         </div>
     </section>
 
     <section class="container" id="projects">
-        <h2 style="margin-bottom: 1.5rem; color: var(--primary); font-family: monospace;">~/Featured-Projects</h2>
+        <h2 style="margin-bottom: 2rem; color: var(--primary);">~/Featured-Projects</h2>
         
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.75rem; color: #888; margin-left: 10px;">projects.json</span>
+                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">projects.json</span>
             </div>
             <div class="terminal-body">
                 <div class="grid">
                     <ul class="list-unstyled">
-                        <li><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank" rel="noopener noreferrer">▹ POS System</a></li>
-                        <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank" rel="noopener noreferrer">▹ Business Management System</a></li>
-                        <li><a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank" rel="noopener noreferrer">▹ Enterprise ERP</a></li>
-                        <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank" rel="noopener noreferrer">▹ SaaS Dashboard</a></li>
+                        <li><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">▹ POS System</a></li>
+                        <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">▹ Business Management System</a></li>
+                        <li><a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank">▹ Enterprise ERP</a></li>
+                        <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">▹ SaaS Dashboard</a></li>
                     </ul>
                     <ul class="list-unstyled">
-                        <li><a href="https://github.com/Shigosag/AnalyticsCLI" target="_blank" rel="noopener noreferrer">▹ Data Analysis CLI</a></li>
-                        <li><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank" rel="noopener noreferrer">▹ E-commerce Platform</a></li>
-                        <li><a href="https://github.com/Shigosag/ShigosagDB" target="_blank" rel="noopener noreferrer">▹ Database Engine</a></li>
-                        <li><a href="https://github.com/Shigosag/Mini-Shell" target="_blank" rel="noopener noreferrer">▹ Mini OS Shell Terminal</a></li>
+                        <li><a href="https://github.com/Shigosag/AnalyticsCLI" target="_blank">▹ Data Analysis CLI</a></li>
+                        <li><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank">▹ E-commerce Platform</a></li>
+                        <li><a href="https://github.com/Shigosag/ShigosagDB" target="_blank">▹ Database Engine</a></li>
+                        <li><a href="https://github.com/Shigosag/Mini-Shell" target="_blank">▹ Mini OS Shell Terminal</a></li>
                     </ul>
                 </div>
             </div>
@@ -250,10 +283,10 @@
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.75rem; color: #888; margin-left: 10px;">skills.sh</span>
+                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">skills.sh</span>
             </div>
             <div class="terminal-body">
-                <h2 style="margin-bottom: 1.2rem; color: var(--primary);">💻 Technical Stack</h2>
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">💻 Technical Stack</h2>
                 <div class="skills">
                     <span class="skills-tag">React / TypeScript / Vite</span>
                     <span class="skills-tag">Node.js / Express / Prisma</span>
@@ -271,32 +304,32 @@
             <div class="terminal-card">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <h3 style="color: var(--primary); margin-bottom: 1rem;">🌐 Presence</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank" rel="noopener noreferrer">▹ LinkedIn Profile</a></li>
-                        <li><a href="https://en.everybodywiki.com/Shigosag" target="_blank" rel="noopener noreferrer">▹ EverybodyWiki</a></li>
-                        <li><a href="https://medium.com/@Shigosag" target="_blank" rel="noopener noreferrer">▹ Medium Blog</a></li>
-                        <li><a href="https://wikialpha.co/wiki/Shigosag" target="_blank" rel="noopener noreferrer">▹ Wikialpha</a></li>
+                    <h3 style="color: var(--primary);">🌐 Presence</h3>
+                    <ul class="list-unstyled" style="margin-top:1rem">
+                        <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank">LinkedIn</a></li>
+                        <li><a href="https://en.everybodywiki.com/Shigosag" target="_blank">EverybodyWiki</a></li>
+                        <li><a href="https://medium.com/@Shigosag" target="_blank">Medium Blog</a></li>
+                        <li><a href="https://wikialpha.co/wiki/Shigosag" target="_blank">Wikialpha</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="terminal-card" style="border-color: rgba(188, 19, 254, 0.4);">
+            <div class="terminal-card" style="border-color: var(--secondary);">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <h3 style="color: var(--secondary); margin-bottom: 1rem;">📊 GitHub Stats</h3>
-                    <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="Shigosag GitHub Stats" style="width:100%; border-radius:6px; display: block;">
+                    <h3 style="color: var(--secondary);">📊 GitHub Stats</h3>
+                    <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" style="width:100%; margin-top:1rem; border-radius:5px;">
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Shigosag • Segun Arulogun Gabriel • Built with modern web technologies.</p>
+        <p>© 2026 Shigosag • Segun Arulogun Gabriel • Built with modern web tech.</p>
     </footer>
 
     <script>
-        // Particle Background System
+        // Particle System
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -305,20 +338,20 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             particles = [];
-            for (let i = 0; i < 90; i++) {
+            for (let i = 0; i < 100; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
                     size: Math.random() * 2,
-                    speedX: (Math.random() - 0.5) * 0.4,
-                    speedY: (Math.random() - 0.5) * 0.4
+                    speedX: (Math.random() - 0.5) * 0.5,
+                    speedY: (Math.random() - 0.5) * 0.5
                 });
             }
         }
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(0, 242, 255, 0.28)';
+            ctx.fillStyle = 'rgba(0, 242, 255, 0.3)';
             particles.forEach(p => {
                 p.x += p.speedX;
                 p.y += p.speedY;
@@ -331,49 +364,52 @@
             requestAnimationFrame(animate);
         }
 
+        // Active Section Navigation Highlights
+        const sections = document.querySelectorAll('section, header');
+        const navLi = document.querySelectorAll('.nav-links a');
+        
+        window.onscroll = () => {
+            let current = "";
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 120) {
+                    current = section.getAttribute('id');
+                }
+            });
+            navLi.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === `#${current}`) {
+                    a.classList.add('active');
+                }
+            });
+        };
+
+        // Smooth Scroll & Target Pulse Focus Highlight
+        navLi.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const targetId = link.getAttribute('href');
+                const targetSection = document.querySelector(targetId);
+                
+                if (targetSection) {
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
+                    
+                    // Trigger flash animation on the terminal card of the targeted section
+                    const card = targetSection.querySelector('.terminal-card');
+                    if (card) {
+                        card.classList.remove('target-flash');
+                        void card.offsetWidth; // Force CSS repaint to restart animation
+                        card.classList.add('target-flash');
+                    }
+                }
+            });
+        });
+
         window.addEventListener('resize', initParticles);
         initParticles();
         animate();
 
-        // Active Navbar Link Tracking on Scroll
-        const sections = document.querySelectorAll('section, header');
-        const navLinks = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Target Highlight Glow when Navbar link is clicked
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href').substring(1);
-                const targetSection = document.getElementById(targetId);
-                
-                if (targetSection) {
-                    const cards = targetSection.querySelectorAll('.terminal-card');
-                    cards.forEach(card => {
-                        card.classList.remove('section-focus');
-                        void card.offsetWidth; // Trigger reflow to restart animation
-                        card.classList.add('section-focus');
-                    });
-                }
-            });
-        });
-
-        // Dark Mode Toggle Mockup
+        // Dark/Light Mode Inverter
         function toggleMode() {
             document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
         }
