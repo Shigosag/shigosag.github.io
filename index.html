@@ -120,7 +120,7 @@
             width: clamp(300px, 60vw, 600px);
             height: clamp(300px, 60vw, 600px);
             border-radius: 50%;
-            top: 25%;
+            top: 30%;
             left: 50%;
             transform: translate(-50%, -50%);
             /* Thin glowing outline */
@@ -129,8 +129,8 @@
             background: radial-gradient(circle at center, transparent 30%, rgba(0, 242, 255, 0.05) 60%, rgba(0, 242, 255, 0.15) 100%);
             /* Cyan Glow and semi-dome mask */
             box-shadow: 0 0 50px rgba(0, 242, 255, 0.2), inset 0 0 30px rgba(0, 242, 255, 0.1);
-            -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 90%);
-            mask-image: linear-gradient(to bottom, black 40%, transparent 90%);
+            -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 65%);
+            mask-image: linear-gradient(to bottom, black 20%, transparent 65%);
             z-index: 1;
             pointer-events: none;
         }
@@ -138,7 +138,7 @@
         /* GRADIENT DIVIDER (User Provided) */
         .gradient-divider {
             width: 180px;
-            height: 2px;
+            height: 1px;
             /* Fades from transparent to neon colors back to transparent */
             background: linear-gradient(90deg, transparent, #ff00c8, #00f2ff, #ff00c8, transparent);
             margin: 15px auto;
@@ -173,7 +173,8 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: pulse 3s infinite;
-            line-height: 1;
+            line-height: 1.2;
+            padding-bottom: 0.1em;
         }
 
         @keyframes pulse {
@@ -289,7 +290,7 @@
         
         <h1 class="title-glitch" style="margin-bottom: 10px;">Shigosag</h1>
         
-        <p style="letter-spacing: 5px; color: #888; margin-top: 30px; font-weight: 500; position: relative; z-index: 2;">SEGUN ARULOGUN GABRIEL</p>
+        <p style="letter-spacing: 5px; color: #888; margin-top: 20px; font-weight: 500; position: relative; z-index: 2;">SEGUN ARULOGUN GABRIEL</p>
         
         <!-- NEW GRADIENT DIVIDER (User Provided) -->
         <div class="gradient-divider"></div>
