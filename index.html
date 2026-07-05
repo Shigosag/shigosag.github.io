@@ -26,7 +26,7 @@
   </script>
   
   <!-- SEO -->
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems." />
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems. GitHub portfolio and projects." />
   <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
   <meta name="author" content="Segun Arulogun Gabriel" />
   
@@ -74,34 +74,30 @@
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--glass);
             display: flex; 
-            justify-content: center; 
+            justify-content: center; /* Centered now that logo is gone */
             align-items: center;
-            padding: 0.8rem 5%;
-            gap: 1.5rem;
+            padding: 1rem 5%;
+            gap: 20px;
         }
 
-        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center;}
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
         .nav-links a { 
             text-decoration: none; 
             color: #888; 
             font-size: 0.85rem; 
             transition: 0.3s; 
             font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 6px;
             padding-bottom: 4px;
             border-bottom: 2px solid transparent;
+            white-space: nowrap;
         }
-
-        .nav-links svg { width: 16px; height: 16px; stroke: currentColor; fill: none; stroke-width: 2; }
         
         .nav-links a.active, .nav-links a:hover { 
             color: var(--primary); 
             border-bottom-color: var(--primary);
         }
 
-        /* Hero Section */
+        /* Hero Section & Glow Orb */
         header {
             position: relative;
             height: 100vh; 
@@ -113,36 +109,22 @@
             overflow: hidden;
         }
 
-        /* Large Glow Orb */
+        /* Large Visible Glow Orb */
         .glow-orb {
             position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.3) 0%, rgba(188, 19, 254, 0.15) 50%, transparent 70%);
+            width: 550px;
+            height: 550px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.35) 0%, rgba(188, 19, 254, 0.2) 50%, transparent 70%);
             border-radius: 50%;
-            filter: blur(80px);
+            filter: blur(60px);
             z-index: -1;
             pointer-events: none;
             animation: orb-pulse 6s infinite ease-in-out;
         }
 
         @keyframes orb-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.2); opacity: 0.9; }
-        }
-
-        /* Neon Arch / Gradient Arch */
-        .neon-arch {
-            width: min(300px, 70vw);
-            height: 100px;
-            border: 3px solid transparent;
-            border-top: 4px solid var(--primary);
-            border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-            position: absolute;
-            top: calc(50% - 110px); /* Positioned above title */
-            filter: drop-shadow(0 0 15px var(--primary));
-            opacity: 0.8;
-            pointer-events: none;
+            0%, 100% { transform: scale(1); opacity: 0.8; }
+            50% { transform: scale(1.2); opacity: 1; }
         }
 
         .title-glitch {
@@ -152,17 +134,6 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: pulse 3s infinite;
-            z-index: 10;
-        }
-
-        /* Gradient Divider under name */
-        .name-divider {
-            width: 120px;
-            height: 3px;
-            background: linear-gradient(to right, transparent, var(--secondary), var(--accent), transparent);
-            margin: 15px auto;
-            border-radius: 2px;
-            box-shadow: 0 0 15px var(--secondary);
         }
 
         @keyframes pulse {
@@ -170,7 +141,6 @@
             50% { opacity: 0.8; filter: drop-shadow(0 0 20px var(--secondary)); }
         }
 
-        /* Terminal Window Style */
         .terminal-card {
             background: var(--card-bg);
             border: 1px solid var(--glass);
@@ -182,9 +152,7 @@
         }
         .terminal-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-        .target-flash {
-            animation: flash-glow 1.5s ease-out;
-        }
+        .target-flash { animation: flash-glow 1.5s ease-out; }
 
         @keyframes flash-glow {
             0% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
@@ -200,13 +168,12 @@
         }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
         .terminal-body { padding: 2rem; }
 
         .container { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
         
-        section, header {
-            scroll-margin-top: 100px;
-        }
+        section, header { scroll-margin-top: 100px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
@@ -225,20 +192,16 @@
         .btn-glow:hover { box-shadow: 0 0 20px var(--primary); }
 
         .list-unstyled { list-style: none; }
-        .list-unstyled li { margin-bottom: 10px; display: flex; align-items: center; gap: 8px;}
+        .list-unstyled li { margin-bottom: 10px; }
         .list-unstyled a { color: var(--text); text-decoration: none; border-bottom: 1px solid transparent; }
         .list-unstyled a:hover { border-bottom: 1px solid var(--secondary); color: var(--secondary); }
 
-        .section-header-flex { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
-        .section-header-flex svg { width: 24px; height: 24px; stroke: var(--primary); stroke-width: 2; fill: none; }
-
         footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; }
 
-        @media (max-width: 480px) {
-            .nav-links { gap: 0.6rem; }
-            .nav-links a span { display: none; } /* Hide text on very small screens to keep icons */
+        /* Mobile specific spacing */
+        @media (max-width: 600px) {
+            .nav-links { gap: 0.8rem; }
             .nav-links a { font-size: 0.75rem; }
-            .neon-arch { top: calc(50% - 90px); height: 70px; }
         }
     </style>
 </head>
@@ -248,37 +211,20 @@
 
     <nav>
         <ul class="nav-links">
-            <li><a href="#home" class="active">
-                <svg viewBox="0 0 24 24"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-                <span>Home</span></a></li>
-            <li><a href="#about">
-                <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                <span>About</span></a></li>
-            <li><a href="#projects">
-                <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                <span>Projects</span></a></li>
-            <li><a href="#skills">
-                <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                <span>Skills</span></a></li>
-            <li><a href="#links">
-                <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                <span>Links</span></a></li>
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#links">Links</a></li>
         </ul>
-        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; margin-left: 10px;">🌙</button>
+        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem">🌙</button>
     </nav>
 
     <header id="home">
         <div class="glow-orb"></div>
-        <!-- The Neon Arch -->
-        <div class="neon-arch"></div>
-        
         <h1 class="title-glitch">Shigosag</h1>
-        <p style="letter-spacing: 5px; color: #888; margin-top: 10px; font-weight: 600;">SEGUN ARULOGUN GABRIEL</p>
-        
-        <!-- The Gradient Divider -->
-        <div class="name-divider"></div>
-
-        <p style="margin-top: 10px; color: #aaa; max-width: 600px;">
+        <p style="letter-spacing: 5px; color: #888; margin-top: 10px;">SEGUN ARULOGUN GABRIEL</p>
+        <p style="margin-top: 20px; color: #aaa; max-width: 600px;">
             Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
         </p>
         <div style="margin-top: 30px; display: flex; gap: 15px;">
@@ -294,10 +240,7 @@
                 <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">about.txt</span>
             </div>
             <div class="terminal-body">
-                <div class="section-header-flex">
-                    <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-                    <h2 style="color: var(--primary);">About Me</h2>
-                </div>
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">👋 About Me</h2>
                 <p style="font-size: 1.1rem; line-height: 1.8;">
                     Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications.
                 </p>
@@ -306,10 +249,7 @@
     </section>
 
     <section class="container" id="projects">
-        <div class="section-header-flex">
-            <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-            <h2 style="color: var(--primary);">~/Featured-Projects</h2>
-        </div>
+        <h2 style="margin-bottom: 2rem; color: var(--primary);">~/Featured-Projects</h2>
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
@@ -318,16 +258,16 @@
             <div class="terminal-body">
                 <div class="grid">
                     <ul class="list-unstyled">
-                        <li><span>▹</span><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">POS System</a></li>
-                        <li><span>▹</span><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">Business Management System</a></li>
-                        <li><span>▹</span><a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank">Enterprise ERP</a></li>
-                        <li><span>▹</span><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">SaaS Dashboard</a></li>
+                        <li><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">▹ POS System</a></li>
+                        <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">▹ Business Management System</a></li>
+                        <li><a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank">▹ Enterprise ERP</a></li>
+                        <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">▹ SaaS Dashboard</a></li>
                     </ul>
                     <ul class="list-unstyled">
-                        <li><span>▹</span><a href="https://github.com/Shigosag/AnalyticsCLI" target="_blank">Data Analysis CLI</a></li>
-                        <li><span>▹</span><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank">E-commerce Platform</a></li>
-                        <li><span>▹</span><a href="https://github.com/Shigosag/ShigosagDB" target="_blank">Database Engine</a></li>
-                        <li><span>▹</span><a href="https://github.com/Shigosag/Mini-Shell" target="_blank">Mini OS Shell Terminal</a></li>
+                        <li><a href="https://github.com/Shigosag/AnalyticsCLI" target="_blank">▹ Data Analysis CLI</a></li>
+                        <li><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank">▹ E-commerce Platform</a></li>
+                        <li><a href="https://github.com/Shigosag/ShigosagDB" target="_blank">▹ Database Engine</a></li>
+                        <li><a href="https://github.com/Shigosag/Mini-Shell" target="_blank">▹ Mini OS Shell Terminal</a></li>
                     </ul>
                 </div>
             </div>
@@ -341,10 +281,7 @@
                 <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">skills.sh</span>
             </div>
             <div class="terminal-body">
-                <div class="section-header-flex">
-                    <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                    <h2 style="color: var(--primary);">Technical Stack</h2>
-                </div>
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">💻 Technical Stack</h2>
                 <div class="skills">
                     <span class="skills-tag">React / TypeScript / Vite</span>
                     <span class="skills-tag">Node.js / Express / Prisma</span>
@@ -362,10 +299,7 @@
             <div class="terminal-card">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <div class="section-header-flex">
-                        <svg viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-                        <h3 style="color: var(--primary);">Presence</h3>
-                    </div>
+                    <h3 style="color: var(--primary);">🌐 Presence</h3>
                     <ul class="list-unstyled" style="margin-top:1rem">
                         <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank">LinkedIn</a></li>
                         <li><a href="https://en.everybodywiki.com/Shigosag" target="_blank">EverybodyWiki</a></li>
@@ -377,11 +311,7 @@
             <div class="terminal-card" style="border-color: var(--secondary);">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <div class="section-header-flex">
-                        <!-- Chart SVG Icon instead of emoji -->
-                        <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        <h3 style="color: var(--secondary);">GitHub Stats</h3>
-                    </div>
+                    <h3 style="color: var(--secondary);">📊 GitHub Stats</h3>
                     <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" style="width:100%; margin-top:1rem; border-radius:5px;">
                 </div>
             </div>
@@ -429,17 +359,20 @@
         
         window.onscroll = () => {
             let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 150) {
-                    current = section.getAttribute('id');
-                }
-            });
+            // Bottom detection for VPS/Mobile to ensure 'Links' highlights
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 60) {
+                current = "links";
+            } else {
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (window.scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+            }
             navLi.forEach(a => {
                 a.classList.remove('active');
-                if (a.getAttribute('href') === `#${current}`) {
-                    a.classList.add('active');
-                }
+                if (a.getAttribute('href') === `#${current}`) a.classList.add('active');
             });
         };
 
@@ -450,6 +383,9 @@
                 const targetSection = document.querySelector(targetId);
                 if (targetSection) {
                     targetSection.scrollIntoView({ behavior: 'smooth' });
+                    // Instant highlight for better feedback
+                    navLi.forEach(nav => nav.classList.remove('active'));
+                    link.classList.add('active');
                     const card = targetSection.querySelector('.terminal-card');
                     if (card) {
                         card.classList.remove('target-flash');
