@@ -17,33 +17,25 @@
     "sameAs": [
       "https://github.com/Shigosag",
       "https://github.com/Shigosag/Shigosag",
-      "https://github.com/Shigosag?tab=repositories",
       "https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6",
-      "https://about.me/Shigosag",
       "https://en.everybodywiki.com/Shigosag"
     ]
   }
   </script>
   
-  <!-- SEO -->
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems. GitHub portfolio and projects." />
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems." />
   <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
   <meta name="author" content="Segun Arulogun Gabriel" />
-  
-  <!-- OpenGraph -->
   <meta property="og:title" content="Shigosag | Developer Portfolio" />
-  <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://shigosag.github.io" />
   <meta property="og:image" content="https://Shigosag.github.io/assets/rosepink_black.png" />
-
   <meta name="google-site-verification" content="LaGrHrJsvIYHFiWW0MfxQgDV_DBgHLH25xVqOlU0WjM" />
+  
   <title>Shigosag | Developer Portfolio</title>
 
     <style>
         :root {
             --bg: #050505;
-            --card-bg: rgba(20, 20, 20, 0.8);
+            --card-bg: rgba(15, 15, 15, 0.9);
             --primary: #00f2ff;
             --secondary: #bc13fe;
             --accent: #ff00c8;
@@ -51,159 +43,118 @@
             --glass: rgba(255, 255, 255, 0.05);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', -apple-system, monospace; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif, monospace; }
         
         body {
             background-color: var(--bg);
             color: var(--text);
             overflow-x: hidden;
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
         canvas { position: fixed; top: 0; left: 0; z-index: -1; }
 
         /* Sticky Navbar */
         nav {
-            position: fixed; 
-            top: 0; 
-            left: 0;
-            width: 100%; 
-            z-index: 1000;
-            background: rgba(5, 5, 5, 0.85); 
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            background: rgba(5, 5, 5, 0.9); backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--glass);
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center;
+            display: flex; justify-content: space-between; align-items: center;
             padding: 1rem 5%;
         }
 
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; }
         .nav-links a { 
-            text-decoration: none; 
-            color: #888; 
-            font-size: 0.9rem; 
-            transition: 0.3s; 
-            font-weight: 500;
-            padding-bottom: 4px;
-            border-bottom: 2px solid transparent;
+            text-decoration: none; color: #777; font-size: 0.85rem; 
+            transition: 0.3s; font-weight: 600; text-transform: uppercase;
+            letter-spacing: 1px; padding: 5px 0;
         }
-        
-        /* Active Link Highlight */
-        .nav-links a.active, .nav-links a:hover { 
-            color: var(--primary); 
-            border-bottom-color: var(--primary);
-        }
+        .nav-links a.active, .nav-links a:hover { color: var(--primary); border-bottom: 2px solid var(--primary); }
 
-        /* Hero Section & Glow Orb */
+        /* Hero Section & Enhanced Glow Orb */
         header {
-            position: relative;
-            height: 100vh; 
-            display: flex; 
-            flex-direction: column;
-            justify-content: center; 
-            align-items: center; 
-            text-align: center;
-            overflow: hidden;
+            position: relative; height: 100vh; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; text-align: center;
         }
 
-        /* Circular Glow Orb Behind Title */
         .glow-orb {
             position: absolute;
-            width: 350px;
-            height: 350px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.25) 0%, rgba(188, 19, 254, 0.15) 50%, transparent 70%);
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.3) 0%, rgba(188, 19, 254, 0.2) 40%, transparent 70%);
             border-radius: 50%;
-            filter: blur(50px);
+            filter: blur(60px);
             z-index: -1;
-            pointer-events: none;
-            animation: orb-pulse 6s infinite ease-in-out;
+            animation: orb-float 8s infinite ease-in-out;
         }
 
-        @keyframes orb-pulse {
-            0%, 100% { transform: scale(1); opacity: 0.8; }
-            50% { transform: scale(1.2); opacity: 1; }
+        @keyframes orb-float {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.7; }
+            50% { transform: translate(20px, -20px) scale(1.1); opacity: 1; }
         }
 
         .title-glitch {
-            font-size: clamp(3rem, 10vw, 6rem);
+            font-size: clamp(3.5rem, 12vw, 7rem);
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: pulse 3s infinite;
+            filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.4));
         }
 
-        @keyframes pulse {
-            0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px var(--primary)); }
-            50% { opacity: 0.8; filter: drop-shadow(0 0 20px var(--secondary)); }
-        }
-
-        /* Terminal Window Style */
+        /* Terminal Cards */
         .terminal-card {
             background: var(--card-bg);
             border: 1px solid var(--glass);
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+            margin-bottom: 2.5rem;
+            transition: 0.3s;
         }
-        .terminal-card:hover { transform: translateY(-5px); border-color: var(--primary); }
+        .terminal-card:hover { border-color: var(--primary); box-shadow: 0 0 20px rgba(0, 242, 255, 0.1); }
 
-        /* Target Highlight Flash Effect */
-        .target-flash {
-            animation: flash-glow 1.5s ease-out;
-        }
-
+        .target-flash { animation: flash-glow 1.2s ease-out; }
         @keyframes flash-glow {
             0% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
-            30% { box-shadow: 0 0 30px var(--primary); border-color: var(--primary); }
+            50% { box-shadow: 0 0 40px var(--primary); border-color: var(--primary); }
             100% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
         }
 
         .terminal-header {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 10px 15px;
-            display: flex; gap: 8px;
-            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 18px;
+            display: flex; gap: 8px; align-items: center;
         }
         .dot { width: 12px; height: 12px; border-radius: 50%; }
         .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
 
-        .terminal-body { padding: 2rem; }
+        .terminal-body { padding: 2.5rem; }
 
-        /* Content Sections */
-        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
-        
-        /* Adjust scrolling distance so headers don't hide under the sticky navbar */
-        section, header {
-            scroll-margin-top: 80px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 6rem 1.5rem; }
+        section { scroll-margin-top: 100px; }
 
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
 
         .skills-tag {
-            display: inline-block; padding: 5px 12px; margin: 5px;
-            background: var(--glass); border: 1px solid var(--primary);
-            border-radius: 5px; color: var(--primary); font-size: 0.8rem;
+            display: inline-block; padding: 6px 14px; margin: 5px;
+            background: rgba(0, 242, 255, 0.05); border: 1px solid var(--primary);
+            border-radius: 4px; color: var(--primary); font-size: 0.8rem; font-weight: 500;
         }
 
         .btn-glow {
-            padding: 12px 25px; border-radius: 8px; border: none;
-            background: var(--primary); color: #000; font-weight: bold;
+            padding: 14px 28px; border-radius: 8px; border: none;
+            background: var(--primary); color: #000; font-weight: 800;
             cursor: pointer; transition: 0.3s; text-decoration: none;
             display: inline-block; margin-top: 1rem;
         }
-        .btn-glow:hover { box-shadow: 0 0 20px var(--primary); }
+        .btn-glow:hover { box-shadow: 0 0 25px var(--primary); transform: scale(1.05); }
 
         .list-unstyled { list-style: none; }
-        .list-unstyled li { margin-bottom: 10px; }
-        .list-unstyled a { color: var(--text); text-decoration: none; border-bottom: 1px solid transparent; }
-        .list-unstyled a:hover { border-bottom: 1px solid var(--secondary); color: var(--secondary); }
+        .list-unstyled li { margin-bottom: 12px; }
+        .list-unstyled a { color: var(--text); text-decoration: none; font-size: 0.95rem; }
+        .list-unstyled a:hover { color: var(--primary); padding-left: 5px; transition: 0.2s; }
 
-        footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; }
+        footer { text-align: center; padding: 5rem 0; color: #444; font-size: 0.75rem; border-top: 1px solid var(--glass); }
     </style>
 </head>
 <body>
@@ -211,7 +162,7 @@
     <canvas id="particles"></canvas>
 
     <nav>
-        <div class="logo" style="font-weight:bold; color:var(--primary)">SHIGOSAG DEV</div>
+        <div class="logo" style="font-weight:900; color:var(--primary); letter-spacing:2px;">SHIGOSAG</div>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -219,21 +170,19 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#links">Links</a></li>
         </ul>
-        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem">🌙</button>
+        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; filter: grayscale(1);">🌙</button>
     </nav>
 
     <header id="home">
-        <!-- Glow Orb Behind Title -->
         <div class="glow-orb"></div>
-        
         <h1 class="title-glitch">Shigosag</h1>
-        <p style="letter-spacing: 5px; color: #888; margin-top: 10px;">SEGUN ARULOGUN GABRIEL</p>
-        <p style="margin-top: 20px; color: #aaa; max-width: 600px;">
-            Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
+        <p style="letter-spacing: 6px; color: #666; font-weight: 700; margin-top: 10px;">SEGUN ARULOGUN GABRIEL</p>
+        <p style="margin-top: 25px; color: #999; max-width: 550px; font-size: 1.1rem;">
+            Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code.
         </p>
-        <div style="margin-top: 30px; display: flex; gap: 15px;">
-            <a href="#projects" class="btn-glow">View Projects</a>
-            <a href="https://github.com/Shigosag" target="_blank" class="btn-glow" style="background:transparent; border:1px solid #fff; color:#fff">GitHub</a>
+        <div style="margin-top: 35px; display: flex; gap: 20px;">
+            <a href="#projects" class="btn-glow">VIEW PROJECTS</a>
+            <a href="https://github.com/Shigosag" target="_blank" class="btn-glow" style="background:transparent; border:2px solid #fff; color:#fff">GITHUB</a>
         </div>
     </header>
 
@@ -241,30 +190,29 @@
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">about.txt</span>
+                <span style="font-size: 0.7rem; color: #555; margin-left: 10px; font-weight: bold;">ABOUT.MD</span>
             </div>
             <div class="terminal-body">
-                <h2 style="margin-bottom: 1rem; color: var(--primary);">👋 About Me</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">
-                    Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications.
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">👋 Hello World</h2>
+                <p style="font-size: 1.15rem; color: #ccc;">
+                    Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications. Focused on performance, architecture, and user experience.
                 </p>
             </div>
         </div>
     </section>
 
     <section class="container" id="projects">
-        <h2 style="margin-bottom: 2rem; color: var(--primary);">~/Featured-Projects</h2>
-        
+        <h2 style="margin-bottom: 2rem; color: var(--primary); font-weight: 900;">~/PROJECTS</h2>
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">projects.json</span>
+                <span style="font-size: 0.7rem; color: #555; margin-left: 10px; font-weight: bold;">REPOS.JSON</span>
             </div>
             <div class="terminal-body">
                 <div class="grid">
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">▹ POS System</a></li>
-                        <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">▹ Business Management System</a></li>
+                        <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">▹ Business Mgmt System</a></li>
                         <li><a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank">▹ Enterprise ERP</a></li>
                         <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">▹ SaaS Dashboard</a></li>
                     </ul>
@@ -283,10 +231,10 @@
         <div class="terminal-card">
             <div class="terminal-header">
                 <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">skills.sh</span>
+                <span style="font-size: 0.7rem; color: #555; margin-left: 10px; font-weight: bold;">SKILLS.SH</span>
             </div>
             <div class="terminal-body">
-                <h2 style="margin-bottom: 1rem; color: var(--primary);">💻 Technical Stack</h2>
+                <h2 style="margin-bottom: 1.5rem; color: var(--primary);">💻 Tech Stack</h2>
                 <div class="skills">
                     <span class="skills-tag">React / TypeScript / Vite</span>
                     <span class="skills-tag">Node.js / Express / Prisma</span>
@@ -304,8 +252,8 @@
             <div class="terminal-card">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <h3 style="color: var(--primary);">🌐 Presence</h3>
-                    <ul class="list-unstyled" style="margin-top:1rem">
+                    <h3 style="color: var(--primary); margin-bottom: 1rem;">🌐 Socials</h3>
+                    <ul class="list-unstyled">
                         <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank">LinkedIn</a></li>
                         <li><a href="https://en.everybodywiki.com/Shigosag" target="_blank">EverybodyWiki</a></li>
                         <li><a href="https://medium.com/@Shigosag" target="_blank">Medium Blog</a></li>
@@ -313,23 +261,21 @@
                     </ul>
                 </div>
             </div>
-
             <div class="terminal-card" style="border-color: var(--secondary);">
                 <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <h3 style="color: var(--secondary);">📊 GitHub Stats</h3>
-                    <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" style="width:100%; margin-top:1rem; border-radius:5px;">
+                    <h3 style="color: var(--secondary); margin-bottom: 1rem;">📊 Metrics</h3>
+                    <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="Stats" style="width:100%; border-radius:4px;">
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Shigosag • Segun Arulogun Gabriel • Built with modern web tech.</p>
+        <p>© 2026 SHIGOSAG • SEGUN ARULOGUN GABRIEL • ALL RIGHTS RESERVED</p>
     </footer>
 
     <script>
-        // Particle System
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let particles = [];
@@ -338,45 +284,50 @@
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
             particles = [];
-            for (let i = 0; i < 100; i++) {
+            for (let i = 0; i < 80; i++) {
                 particles.push({
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
-                    size: Math.random() * 2,
-                    speedX: (Math.random() - 0.5) * 0.5,
-                    speedY: (Math.random() - 0.5) * 0.5
+                    size: Math.random() * 1.5,
+                    speedX: (Math.random() - 0.5) * 0.3,
+                    speedY: (Math.random() - 0.5) * 0.3
                 });
             }
         }
 
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = 'rgba(0, 242, 255, 0.3)';
+            ctx.fillStyle = 'rgba(0, 242, 255, 0.2)';
             particles.forEach(p => {
-                p.x += p.speedX;
-                p.y += p.speedY;
+                p.x += p.speedX; p.y += p.speedY;
                 if (p.x < 0 || p.x > canvas.width) p.speedX *= -1;
                 if (p.y < 0 || p.y > canvas.height) p.speedY *= -1;
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                ctx.fill();
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2); ctx.fill();
             });
             requestAnimationFrame(animate);
         }
 
-        // Active Section Navigation Highlights
+        // IMPROVED NAVBAR SCROLL LOGIC
         const sections = document.querySelectorAll('section, header');
-        const navLi = document.querySelectorAll('.nav-links a');
+        const navLinks = document.querySelectorAll('.nav-links a');
         
         window.onscroll = () => {
             let current = "";
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (window.scrollY >= sectionTop - 120) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navLi.forEach(a => {
+            
+            // Check if user is at the very bottom of the page
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+                current = "links";
+            } else {
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    // Lowered threshold to 150 for better PC tracking
+                    if (window.scrollY >= sectionTop - 150) {
+                        current = section.getAttribute('id');
+                    }
+                });
+            }
+
+            navLinks.forEach(a => {
                 a.classList.remove('active');
                 if (a.getAttribute('href') === `#${current}`) {
                     a.classList.add('active');
@@ -384,21 +335,16 @@
             });
         };
 
-        // Smooth Scroll & Target Pulse Focus Highlight
-        navLi.forEach(link => {
+        navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
+                const targetSection = document.querySelector(link.getAttribute('href'));
                 if (targetSection) {
                     targetSection.scrollIntoView({ behavior: 'smooth' });
-                    
-                    // Trigger flash animation on the terminal card of the targeted section
                     const card = targetSection.querySelector('.terminal-card');
                     if (card) {
                         card.classList.remove('target-flash');
-                        void card.offsetWidth; // Force CSS repaint to restart animation
+                        void card.offsetWidth; 
                         card.classList.add('target-flash');
                     }
                 }
@@ -406,10 +352,8 @@
         });
 
         window.addEventListener('resize', initParticles);
-        initParticles();
-        animate();
+        initParticles(); animate();
 
-        // Dark/Light Mode Inverter
         function toggleMode() {
             document.body.style.filter = document.body.style.filter === 'invert(1)' ? 'invert(0)' : 'invert(1)';
         }
