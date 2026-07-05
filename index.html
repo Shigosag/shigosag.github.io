@@ -76,11 +76,11 @@
             display: flex; 
             justify-content: center; 
             align-items: center;
-            padding: 0.8rem 2%;
-            gap: 1rem;
+            padding: 0.8rem 5%;
+            gap: 1.5rem;
         }
 
-        .nav-links { display: flex; gap: 1rem; list-style: none; align-items: center; }
+        .nav-links { display: flex; gap: 1.2rem; list-style: none; align-items: center; }
         .nav-links a { 
             text-decoration: none; 
             color: #888; 
@@ -114,22 +114,24 @@
             padding: 0 20px;
         }
 
-        /* RADIAL HOLOGRAPHIC DOME - Masked sphere illusion */
-        .neon-arch {
-            width: clamp(300px, 70vw, 600px);
-            height: clamp(300px, 70vw, 600px);
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.4) 0%, rgba(188, 19, 254, 0.15) 50%, transparent 70%);
-            border-radius: 50%;
-            /* Bottom alpha mask fade to create the semi-dome illusion */
-            -webkit-mask-image: linear-gradient(to bottom, black 10%, transparent 50%);
-            mask-image: linear-gradient(to bottom, black 10%, transparent 50%);
-            margin-bottom: -280px; /* Pulls the title into the glow area */
+        /* HOLOGRAPHIC DOME - Semi-sphere illusion above title */
+        .holographic-dome {
+            width: clamp(300px, 60vw, 600px);
+            height: clamp(150px, 30vw, 300px);
+            /* Radial glow to simulate sphere */
+            background: radial-gradient(circle at 50% 100%, var(--primary) 0%, rgba(188, 19, 254, 0.3) 40%, transparent 75%);
+            /* Linear mask to fade the bottom out */
+            -webkit-mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 20%, transparent 100%);
+            margin-bottom: -40px;
+            filter: blur(10px);
             position: relative;
             z-index: 1;
+            opacity: 0.8;
             pointer-events: none;
         }
 
-        /* YOUR CUSTOM GRADIENT DIVIDER */
+        /* UPDATED GRADIENT DIVIDER */
         .gradient-divider {
             width: 180px;
             height: 2px;
@@ -167,7 +169,7 @@
             animation: pulse 3s infinite;
             line-height: 1;
             position: relative;
-            z-index: 2;
+            z-index: 3;
         }
 
         @keyframes pulse {
@@ -236,19 +238,11 @@
 
         footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; border-top: 1px solid var(--glass); }
 
-        /* Fix for Mobile Navbar Names */
         @media (max-width: 600px) {
-            nav { padding: 0.6rem 1%; gap: 0.4rem; }
-            .nav-links { gap: 0.3rem; }
-            .nav-links a { 
-                font-size: 0.7rem; 
-                gap: 4px; 
-                padding: 4px 5px; 
-            }
-            .nav-links a span { 
-                display: inline !important; /* Forces names to show on mobile */
-            }
-            .nav-links svg { width: 14px; height: 14px; }
+            .nav-links { gap: 0.5rem; }
+            /* Navbar text now displays on mobile */
+            .nav-links a span { display: inline; } 
+            .nav-links a { font-size: 0.75rem; gap: 5px; padding: 4px 6px; }
         }
     </style>
 </head>
@@ -279,20 +273,20 @@
                 <span>Links</span></a>
             </li>
         </ul>
-        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; margin-left:5px">🌙</button>
+        <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem; margin-left:10px">🌙</button>
     </nav>
 
     <header id="home">
         <div class="glow-orb"></div>
         
         <!-- RADIAL HOLOGRAPHIC DOME -->
-        <div class="neon-arch"></div>
+        <div class="holographic-dome"></div>
         
         <h1 class="title-glitch">Shigosag</h1>
         
         <p style="letter-spacing: 5px; color: #888; margin-top: 10px; font-weight: 500;">SEGUN ARULOGUN GABRIEL</p>
         
-        <!-- YOUR CUSTOM GRADIENT DIVIDER -->
+        <!-- NEW GRADIENT DIVIDER -->
         <div class="gradient-divider"></div>
 
         <p style="margin-top: 10px; color: #aaa; max-width: 600px; font-size: 1.1rem;">
