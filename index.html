@@ -76,7 +76,7 @@
             display: flex; 
             justify-content: center; 
             align-items: center;
-            padding: 0.8rem 5%;
+            padding: 0.7rem 2%;
             gap: 1rem;
         }
 
@@ -87,18 +87,19 @@
             font-size: 0.8rem; 
             transition: 0.3s; 
             font-weight: 500;
-            padding: 5px 6px;
+            padding: 6px 8px;
             display: flex;
             align-items: center;
-            gap: 4px;
+            gap: 5px;
             border-radius: 6px;
+            white-space: nowrap;
         }
 
         .nav-links svg { width: 14px; height: 14px; stroke-width: 2.5px; }
         
         .nav-links a.active, .nav-links a:hover { 
             color: var(--primary); 
-            background: rgba(0, 242, 255, 0.05);
+            background: rgba(0, 242, 255, 0.08);
         }
 
         /* Hero Section Styling */
@@ -114,36 +115,27 @@
             padding: 0 20px;
         }
 
-        /* Hero Title Container to anchor the Arch precisely */
-        .hero-title-wrapper {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        /* THE NEON ARCH - Anchored to Title Width */
-        .hero-title-wrapper::before {
-            content: "";
-            position: absolute;
-            top: -15px; /* Distance from top of letters */
-            left: 0;
-            right: 0;
-            height: 35px;
-            border-top: 3px solid var(--primary);
-            border-radius: 50% 50% 0 0;
+        /* THE NEON ARCH - Perfect Semi-Circle */
+        .neon-arch {
+            width: clamp(180px, 35vw, 400px); /* Limits width to not exceed title */
+            height: 60px;
+            border: 2px solid var(--primary);
+            border-bottom: none;
+            border-radius: 200px 200px 0 0; /* Creates the semi-circle arch */
             filter: drop-shadow(0 0 8px var(--primary));
-            z-index: 1;
-            pointer-events: none;
+            margin-bottom: -15px; /* Pulls title very close */
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
         }
 
-        /* THE GRADIENT DIVIDER - Short and Intense like screenshot */
+        /* THE GRADIENT DIVIDER - Sleek bar */
         .grad-divider {
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            width: 140px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--primary), var(--secondary), transparent);
             margin: 15px auto;
-            border-radius: 10px;
-            box-shadow: 0 0 12px var(--secondary);
+            box-shadow: 0 0 10px var(--primary);
         }
 
         /* Large Glow Orb background */
@@ -151,7 +143,7 @@
             position: absolute;
             width: 600px;
             height: 600px;
-            background: radial-gradient(circle, rgba(0, 242, 255, 0.25) 0%, rgba(188, 19, 254, 0.15) 50%, transparent 70%);
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.2) 0%, rgba(188, 19, 254, 0.1) 50%, transparent 70%);
             border-radius: 50%;
             filter: blur(80px);
             z-index: -1;
@@ -161,24 +153,23 @@
 
         @keyframes orb-pulse {
             0%, 100% { transform: scale(1); opacity: 0.6; }
-            50% { transform: scale(1.2); opacity: 0.9; }
+            50% { transform: scale(1.1); opacity: 0.8; }
         }
 
         .title-glitch {
-            font-size: clamp(3.5rem, 12vw, 7rem);
+            font-size: clamp(3rem, 10vw, 6.5rem);
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             animation: pulse 3s infinite;
-            line-height: 0.9;
+            line-height: 1;
             position: relative;
-            z-index: 2;
         }
 
         @keyframes pulse {
-            0%, 100% { opacity: 1; filter: drop-shadow(0 0 8px var(--primary)); }
-            50% { opacity: 0.8; filter: drop-shadow(0 0 12px var(--secondary)); }
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px var(--primary)); }
+            50% { opacity: 0.8; filter: drop-shadow(0 0 15px var(--secondary)); }
         }
 
         .terminal-card {
@@ -242,9 +233,12 @@
 
         footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; border-top: 1px solid var(--glass); }
 
+        /* FIXED: Ensuring navbar names show on mobile */
         @media (max-width: 600px) {
-            .nav-links { gap: 0.4rem; }
-            .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px 5px; }
+            nav { gap: 0.3rem; padding: 0.7rem 1%; }
+            .nav-links { gap: 0.2rem; }
+            .nav-links a { font-size: 0.7rem; padding: 5px 4px; gap: 3px; }
+            .nav-links a span { display: inline-block; } /* Forces text to show */
             .nav-links svg { width: 12px; height: 12px; }
         }
     </style>
@@ -282,15 +276,17 @@
     <header id="home">
         <div class="glow-orb"></div>
         
-        <div class="hero-title-wrapper">
-            <h1 class="title-glitch">Shigosag</h1>
-        </div>
+        <!-- PERFECT SEMI CIRCLE ARCH -->
+        <div class="neon-arch"></div>
         
-        <p style="letter-spacing: 5px; color: #888; margin-top: 5px; font-weight: 500; font-size: 0.9rem;">SEGUN ARULOGUN GABRIEL</p>
+        <h1 class="title-glitch">Shigosag</h1>
         
+        <p style="letter-spacing: 5px; color: #888; margin-top: 10px; font-weight: 500; font-size: 0.8rem;">SEGUN ARULOGUN GABRIEL</p>
+        
+        <!-- GRADIENT DIVIDER -->
         <div class="grad-divider"></div>
 
-        <p style="margin-top: 10px; color: #aaa; max-width: 600px; font-size: 1.1rem;">
+        <p style="margin-top: 10px; color: #aaa; max-width: 600px; font-size: 1rem;">
             Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
         </p>
         
@@ -393,6 +389,7 @@
             <div class="terminal-card" style="border-color: var(--secondary);">
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    <!-- PRO CHART ICON -->
                     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:10px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
                 </div>
                 <div class="terminal-body">
