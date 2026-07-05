@@ -25,16 +25,18 @@
   }
   </script>
   
-  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems." />
+  <!-- SEO -->
+  <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Portfolio." />
   <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
   <meta name="author" content="Segun Arulogun Gabriel" />
+  
   <meta property="og:title" content="Shigosag | Developer Portfolio" />
   <meta property="og:description" content="Full-Stack Developer Portfolio showcasing GitHub projects." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://shigosag.github.io" />
   <meta property="og:image" content="https://Shigosag.github.io/assets/rosepink_black.png" />
+
   <meta name="google-site-verification" content="LaGrHrJsvIYHFiWW0MfxQgDV_DBgHLH25xVqOlU0WjM" />
-  
   <title>Shigosag | Developer Portfolio</title>
 
     <style>
@@ -57,7 +59,7 @@
             line-height: 1.6;
         }
 
-        canvas { position: fixed; top: 0; left: 0; z-index: -1; pointer-events: none; }
+        canvas { position: fixed; top: 0; left: 0; z-index: -1; }
 
         /* Sticky Navbar */
         nav {
@@ -66,7 +68,7 @@
             left: 0;
             width: 100%; 
             z-index: 1000;
-            background: rgba(5, 5, 5, 0.8); 
+            background: rgba(5, 5, 5, 0.9); 
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--glass);
@@ -80,10 +82,10 @@
         .nav-links a { 
             text-decoration: none; 
             color: #888; 
-            font-size: 0.9rem; 
+            font-size: 0.85rem; 
             transition: 0.3s; 
             font-weight: 500;
-            padding: 5px 0;
+            padding-bottom: 4px;
             border-bottom: 2px solid transparent;
         }
         
@@ -92,7 +94,6 @@
             border-bottom-color: var(--primary);
         }
 
-        /* Hero Section & Glow Orb */
         header {
             position: relative;
             height: 100vh; 
@@ -104,29 +105,22 @@
             overflow: hidden;
         }
 
-        /* ENLARGED GLOW ORB */
+        /* UPDATED GLOW ORB: Larger and more visible */
         .glow-orb {
             position: absolute;
-            width: 600px; /* Increased size */
+            width: 600px;
             height: 600px;
-            background: radial-gradient(circle, 
-                rgba(0, 242, 255, 0.2) 0%, 
-                rgba(188, 19, 254, 0.15) 40%, 
-                rgba(255, 0, 200, 0.05) 60%, 
-                transparent 80%);
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.35) 0%, rgba(188, 19, 254, 0.2) 45%, transparent 70%);
             border-radius: 50%;
             filter: blur(60px);
             z-index: -1;
             pointer-events: none;
             animation: orb-pulse 8s infinite ease-in-out;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
         }
 
         @keyframes orb-pulse {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.6; }
-            50% { transform: translate(-50%, -50%) scale(1.3); opacity: 1; }
+            0%, 100% { transform: scale(1); opacity: 0.6; }
+            50% { transform: scale(1.15); opacity: 1; }
         }
 
         .title-glitch {
@@ -135,10 +129,14 @@
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 15px rgba(0, 242, 255, 0.3));
+            animation: pulse 3s infinite;
         }
 
-        /* Terminal Window Style */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px var(--primary)); }
+            50% { opacity: 0.8; filter: drop-shadow(0 0 20px var(--secondary)); }
+        }
+
         .terminal-card {
             background: var(--card-bg);
             border: 1px solid var(--glass);
@@ -150,14 +148,11 @@
         }
         .terminal-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 
-        .target-flash {
-            animation: flash-glow 1s ease-out;
-        }
-
+        .target-flash { animation: flash-glow 1.5s ease-out; }
         @keyframes flash-glow {
-            0% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
-            50% { box-shadow: 0 0 20px var(--primary); border-color: var(--primary); }
-            100% { box-shadow: 0 0 0px transparent; border-color: var(--glass); }
+            0% { box-shadow: 0 0 0px transparent; }
+            30% { box-shadow: 0 0 30px var(--primary); border-color: var(--primary); }
+            100% { box-shadow: 0 0 0px transparent; }
         }
 
         .terminal-header {
@@ -171,14 +166,11 @@
 
         .terminal-body { padding: 2rem; }
 
-        .container { max-width: 1100px; margin: 0 auto; padding: 5rem 2rem; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 4rem 2rem; }
         
-        /* Ensures section links activate correctly */
-        section, header {
-            scroll-margin-top: 100px;
-        }
+        section, header { scroll-margin-top: 100px; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
 
         .skills-tag {
             display: inline-block; padding: 5px 12px; margin: 5px;
@@ -201,7 +193,7 @@
 
         footer { text-align: center; padding: 4rem; color: #555; font-size: 0.8rem; }
 
-        @media (max-width: 768px) {
+        @media (max-width: 600px) {
             .nav-links { gap: 0.8rem; }
             .nav-links a { font-size: 0.75rem; }
             .glow-orb { width: 300px; height: 300px; }
@@ -213,13 +205,13 @@
     <canvas id="particles"></canvas>
 
     <nav>
-        <div class="logo" style="font-weight:bold; color:var(--primary)">SHIGOSAG DEV</div>
+        <div class="logo" style="font-weight:bold; color:var(--primary)">SHIGOSAG</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#links">Links</a></li>
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#projects" class="nav-item">Projects</a></li>
+            <li><a href="#skills" class="nav-item">Skills</a></li>
+            <li><a href="#links" class="nav-item">Links</a></li>
         </ul>
         <button onclick="toggleMode()" style="background:none; border:none; cursor:pointer; font-size:1.2rem">🌙</button>
     </nav>
@@ -227,9 +219,9 @@
     <header id="home">
         <div class="glow-orb"></div>
         <h1 class="title-glitch">Shigosag</h1>
-        <p style="letter-spacing: 5px; color: #888; margin-top: 10px;">SEGUN ARULOGUN GABRIEL</p>
-        <p style="margin-top: 20px; color: #aaa; max-width: 600px; padding: 0 20px;">
-            Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
+        <p style="letter-spacing: 5px; color: #888; margin-top: 10px; font-weight: bold;">SEGUN ARULOGUN GABRIEL</p>
+        <p style="margin-top: 20px; color: #aaa; max-width: 600px; padding: 0 10px;">
+            Full Stack Developer • Building scalable web experiences • Turning ideas into reality
         </p>
         <div style="margin-top: 30px; display: flex; gap: 15px;">
             <a href="#projects" class="btn-glow">View Projects</a>
@@ -245,33 +237,26 @@
             </div>
             <div class="terminal-body">
                 <h2 style="margin-bottom: 1rem; color: var(--primary);">👋 About Me</h2>
-                <p style="font-size: 1.1rem; line-height: 1.8;">
-                    Full-Stack Developer leveraging AI-assisted workflows to build scalable CLI, web, mobile, and desktop applications.
-                </p>
+                <p style="font-size: 1.1rem;">Full-Stack Developer building SaaS, CLI tools, and automated systems using modern AI-assisted workflows.</p>
             </div>
         </div>
     </section>
 
     <section class="container" id="projects">
-        <h2 style="margin-bottom: 2rem; color: var(--primary);">~/Featured-Projects</h2>
+        <h2 style="margin-bottom: 2rem; color: var(--primary);">~/Projects</h2>
         <div class="terminal-card">
-            <div class="terminal-header">
-                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">projects.json</span>
-            </div>
+            <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
             <div class="terminal-body">
                 <div class="grid">
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/Shigosag/Shigosag-Pos" target="_blank">▹ POS System</a></li>
-                        <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">▹ Management System</a></li>
+                        <li><a href="https://github.com/Shigosag/Business-Management-System" target="_blank">▹ Business Management</a></li>
                         <li><a href="https://github.com/Shigosag/ShigosagNexusERP" target="_blank">▹ Enterprise ERP</a></li>
-                        <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">▹ SaaS Dashboard</a></li>
                     </ul>
                     <ul class="list-unstyled">
                         <li><a href="https://github.com/Shigosag/AnalyticsCLI" target="_blank">▹ Data Analysis CLI</a></li>
-                        <li><a href="https://github.com/Shigosag/Shigosag-Shop" target="_blank">▹ E-commerce</a></li>
                         <li><a href="https://github.com/Shigosag/ShigosagDB" target="_blank">▹ Database Engine</a></li>
-                        <li><a href="https://github.com/Shigosag/Mini-Shell" target="_blank">▹ Mini OS Shell</a></li>
+                        <li><a href="https://github.com/Shigosag/Saasflow-Pro" target="_blank">▹ SaaS Dashboard</a></li>
                     </ul>
                 </div>
             </div>
@@ -280,19 +265,13 @@
 
     <section class="container" id="skills">
         <div class="terminal-card">
-            <div class="terminal-header">
-                <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                <span style="font-size: 0.7rem; color: #666; margin-left: 10px;">skills.sh</span>
-            </div>
+            <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
             <div class="terminal-body">
-                <h2 style="margin-bottom: 1rem; color: var(--primary);">💻 Technical Stack</h2>
+                <h2 style="margin-bottom: 1rem; color: var(--primary);">💻 Tech Stack</h2>
                 <div class="skills">
-                    <span class="skills-tag">React / TypeScript / Vite</span>
-                    <span class="skills-tag">Node.js / Express / Prisma</span>
-                    <span class="skills-tag">PostgreSQL / MongoDB / Python</span>
-                    <span class="skills-tag">FastAPI / Flask / JavaScript</span>
-                    <span class="skills-tag">MQL4 (Forex EA)</span>
-                    <span class="skills-tag">C / C# / C++</span>
+                    <span class="skills-tag">React / Vite</span><span class="skills-tag">Node.js</span>
+                    <span class="skills-tag">PostgreSQL</span><span class="skills-tag">Python</span>
+                    <span class="skills-tag">MQL4 (Forex)</span><span class="skills-tag">C++ / C#</span>
                 </div>
             </div>
         </div>
@@ -301,30 +280,26 @@
     <section class="container" id="links">
         <div class="grid">
             <div class="terminal-card">
-                <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
                     <h3 style="color: var(--primary);">🌐 Presence</h3>
                     <ul class="list-unstyled" style="margin-top:1rem">
                         <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank">LinkedIn</a></li>
                         <li><a href="https://en.everybodywiki.com/Shigosag" target="_blank">EverybodyWiki</a></li>
-                        <li><a href="https://medium.com/@Shigosag" target="_blank">Medium Blog</a></li>
                         <li><a href="https://wikialpha.co/wiki/Shigosag" target="_blank">Wikialpha</a></li>
                     </ul>
                 </div>
             </div>
-
             <div class="terminal-card" style="border-color: var(--secondary);">
-                <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
                 <div class="terminal-body">
-                    <h3 style="color: var(--secondary);">📊 GitHub Stats</h3>
-                    <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="GitHub Stats" style="width:100%; margin-top:1rem; border-radius:5px;">
+                    <h3 style="color: var(--secondary);">📊 GitHub</h3>
+                    <img src="https://github-readme-stats.vercel.app/api?username=Shigosag&show_icons=true&theme=tokyonight&hide_border=true" alt="Stats" style="width:100%; margin-top:1rem; border-radius:5px;">
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Shigosag • Segun Arulogun Gabriel • Built with modern web tech.</p>
+        <p>© 2026 Shigosag • Segun Arulogun Gabriel</p>
     </footer>
 
     <script>
@@ -332,7 +307,6 @@
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let particles = [];
-
         function initParticles() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -342,12 +316,11 @@
                     x: Math.random() * canvas.width,
                     y: Math.random() * canvas.height,
                     size: Math.random() * 2,
-                    speedX: (Math.random() - 0.5) * 0.3,
-                    speedY: (Math.random() - 0.5) * 0.3
+                    speedX: (Math.random() - 0.5) * 0.4,
+                    speedY: (Math.random() - 0.5) * 0.4
                 });
             }
         }
-
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'rgba(0, 242, 255, 0.2)';
@@ -360,49 +333,40 @@
             requestAnimationFrame(animate);
         }
 
-        // IMPROVED: Active Section Navigation Highlights
+        // IMPROVED SCROLL LOGIC: Fixes the "Sticky Project" highlight
         const sections = document.querySelectorAll('header, section');
-        const navLinks = document.querySelectorAll('.nav-links a');
-        
-        function updateActiveNav() {
-            let current = "home";
-            const scrollPos = window.scrollY + 150;
+        const navLinks = document.querySelectorAll('.nav-item');
 
-            // Fix for bottom of page: if scrolled to the end, highlight "links"
-            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-                current = "links";
-            } else {
-                sections.forEach(section => {
-                    if (scrollPos >= section.offsetTop) {
-                        current = section.getAttribute('id');
-                    }
-                });
-            }
+        const observerOptions = {
+            root: null,
+            threshold: 0.4, // Section must be 40% visible to trigger highlight
+            rootMargin: "-10% 0px -40% 0px" // Adjusts detection zone to top-middle
+        };
 
-            navLinks.forEach(a => {
-                a.classList.remove('active');
-                if (a.getAttribute('href') === `#${current}`) {
-                    a.classList.add('active');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
                 }
             });
-        }
+        }, observerOptions);
 
-        window.addEventListener('scroll', updateActiveNav);
-        window.addEventListener('load', updateActiveNav);
+        sections.forEach(section => observer.observe(section));
 
-        // Smooth Scroll + Visual Flash
+        // Smooth Scroll & Flash Effect
         navLinks.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
                 const targetId = link.getAttribute('href');
                 const targetSection = document.querySelector(targetId);
-                
                 if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
+                    targetSection.scrollIntoView({ behavior: 'smooth' });
                     const card = targetSection.querySelector('.terminal-card');
                     if (card) {
                         card.classList.remove('target-flash');
