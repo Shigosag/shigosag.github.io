@@ -251,7 +251,7 @@
             .nav-links svg { width: 14px; height: 14px; }
         }
 
-        body.light-mode .github-btn {
+        html.light-mode .github-btn {
             filter: invert(1);
         }
     </style>
@@ -300,7 +300,7 @@
         <div class="gradient-divider"></div>
 
         <p style="margin-top: 10px; color: #aaa; max-width: 600px; font-size: 1.1rem; position: relative; z-index: 2;">
-          Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
+           Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
         </p>
         
         <div style="margin-top: 35px; display: flex; gap: 15px; position: relative; z-index: 2;">
@@ -496,9 +496,11 @@
         animate();
 
         function toggleMode() {
-            const isLight = document.body.classList.toggle('light-mode');
-            document.body.style.filter = isLight ? 'invert(1)' : 'invert(0)';
-    
+            const html = document.documentElement;
+            const isLight = html.classList.toggle('light-mode');
+
+            html.style.filter = isLight ? 'invert(1)' : 'invert(0)';
+          
             // Toggle the emoji too
             const btn = document.querySelector('nav button');
             btn.innerText = isLight ? '☀️' : '🌙';
