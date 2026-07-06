@@ -127,11 +127,8 @@
             top: 35%;
             left: 50%;
             transform: translate(-50%, -50%);
-            /* Thin glowing outline */
             border: 1px solid rgba(0, 242, 255, 0.5);
-            /* Radial gradient for sphere volume */
             background: radial-gradient(circle at center, transparent 30%, rgba(0, 242, 255, 0.05) 60%, rgba(0, 242, 255, 0.15) 100%);
-            /* Cyan Glow and semi-dome mask */
             box-shadow: 0 0 100px rgba(0, 242, 255, 0.5), inset 0 0 50px rgba(0, 242, 255, 0.2);
             -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
             mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
@@ -143,10 +140,8 @@
         .gradient-divider {
             width: 180px;
             height: 1.5px;
-            /* Fades from transparent to neon colors back to transparent */
             background: linear-gradient(90deg, transparent, #bc13fe, #00f2ff, #bc13fe, transparent);
             margin: 15px auto;
-            /* Creates the neon glow effect */
             filter: drop-shadow(0 0 5px #00f2ff);
         }
 
@@ -384,13 +379,22 @@
     </section>
 
     <section class="container" id="links">
-        <h3 style="color: var(--primary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            Presence
-                    </h3>
+        <!-- Main Section Header -->
+        <h2 style="margin-bottom: 2.5rem; color: var(--primary); display: flex; align-items: center; gap: 12px;">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            ~/Connect
+        </h2>
+
         <div class="grid">
+            <!-- SOCIAL LINKS CARD -->
             <div class="terminal-card">
-                <div class="terminal-header"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                <div class="terminal-header">
+                    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+                    <span style="font-size: 0.75rem; color: #888; margin-left: 10px; font-family: monospace; display: flex; align-items: center; gap: 6px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                        links.json
+                    </span>
+                </div>
                 <div class="terminal-body">
                     <ul class="list-unstyled">
                         <li><a href="https://linkedin.com/in/segun-arulogun-gabriel-shigosag-506788a6" target="_blank">LinkedIn</a></li>
@@ -400,15 +404,18 @@
                     </ul>
                 </div>
             </div>
+
+            <!-- GITHUB STATS CARD -->
             <div class="terminal-card" style="border-color: var(--secondary);">
-                <!-- Github Stats WITH CHART SVG ICON -->
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-left:10px"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                    <span style="font-size: 0.75rem; color: #888; margin-left: 10px; font-family: monospace; display: flex; align-items: center; gap: 6px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                        stats.sh
+                    </span>
                 </div>
                 <div class="terminal-body">
                     <h3 style="color: var(--secondary); margin-bottom: 1rem;">GitHub Live Stats</h3>
-                    <!-- Live Data -->
                     <div id="github-stats-box" style="font-family: monospace; color: var(--text); line-height: 2;">
                         <div id="repos">📦 Public Repos: Loading...</div>
                         <div id="followers">👥 Followers: Loading...</div>
@@ -417,6 +424,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
     <footer>
