@@ -121,18 +121,18 @@
         /* HOLOGRAPHIC SPHERE / SEMI-DOME */
         .neon-sphere {
             position: absolute;
-            width: clamp(300px, 60vw, 600px);
-            height: clamp(300px, 60vw, 600px);
+            width: clamp(400px, 75vw, 750px);
+            height: clamp(400px, 75vw, 750px);
             border-radius: 50%;
             top: 35%;
             left: 50%;
             transform: translate(-50%, -50%);
             /* Thin glowing outline */
-            border: 1px solid rgba(0, 242, 255, 0.4);
+            border: 2px solid rgba(0, 242, 255, 0.9);
             /* Radial gradient for sphere volume */
             background: radial-gradient(circle at center, transparent 30%, rgba(0, 242, 255, 0.05) 60%, rgba(0, 242, 255, 0.15) 100%);
             /* Cyan Glow and semi-dome mask */
-            box-shadow: 0 0 50px rgba(0, 242, 255, 0.2), inset 0 0 30px rgba(0, 242, 255, 0.1);
+            box-shadow: 0 0 100px rgba(0, 242, 255, 0.5), inset 0 0 50px rgba(0, 242, 255, 0.2);
             -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
             mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
             z-index: 1;
@@ -171,7 +171,7 @@
         .title-glitch {
             position: relative;
             z-index: 2;
-            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-size: clamp(3.5rem, 12vw, 8.5rem);
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
@@ -475,6 +475,10 @@
                     }
                 });
             }
+
+            // UPDATES THE URL HASH
+            if (current) history.replaceState(null, null, `#${current}`);
+          
             navLi.forEach(a => {
                 a.classList.remove('active');
                 if (a.getAttribute('href') === `#${current}`) {
