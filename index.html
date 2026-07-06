@@ -249,7 +249,6 @@
 
         @media (max-width: 600px) {
             .nav-links { gap: 0.6rem; }
-            /* Fixed: Ensuring spans (names) show on mobile */
             .nav-links a span { display: inline !important; font-size: 0.65rem; } 
             .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px; flex-direction: column; }
             .nav-links svg { width: 14px; height: 14px; }
@@ -299,8 +298,10 @@
         <!-- GRADIENT DIVIDER -->
         <div class="gradient-divider"></div>
 
-        <p style="margin-top: 20px; color: #aaa; max-width: 480px; text-align: center; margin-left: auto; margin-right: auto; line-height: 1.6; font-size: clamp(0.9rem, 3vw, 1.1rem); position: relative; z-index: 2; text-wrap: balance;">
-            Full Stack Developer • Building scalable web experiences • Turning ideas into reality through clean code
+        <p style="margin-top: 20px; color: #aaa; text-align: center; line-height: 1.6; font-size: clamp(0.85rem, 2.8vw, 1.1rem); position: relative; z-index: 2;">
+            <span style="display: block;">Full Stack Developer • Building scalable</span>
+            <span style="display: block;">web experiences • Turning ideas into</span>
+            <span style="display: block;">reality through clean code.</span>
         </p>
         
         <div style="margin-top: 35px; display: flex; gap: 15px; position: relative; z-index: 2;">
