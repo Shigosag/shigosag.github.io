@@ -248,6 +248,16 @@
             .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px; flex-direction: column; }
             .nav-links svg { width: 14px; height: 14px; }
         }
+
+        @media (max-height: 550px) {
+            header {
+                /* This pushes the whole group down below the navbar */
+                padding-top: 150px !important; 
+        
+                /* This prevents the group from trying to center itself behind the navbar */
+                justify-content: flex-start !important; 
+            }
+        }
     </style>
 </head>
 <body>
