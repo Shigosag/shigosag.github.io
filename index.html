@@ -111,11 +111,11 @@
             min-height: 100vh; 
             display: flex; 
             flex-direction: column;
-            justify-content: center; 
+            justify-content: flex-start; 
             align-items: center; 
             text-align: center;
             overflow: hidden;
-            padding: 100px 20px 40px 20px;
+            padding: 220px 20px 60px 20px;
         }
 
         /* HOLOGRAPHIC SPHERE / SEMI-DOME */
@@ -124,7 +124,7 @@
             width: clamp(300px, 60vw, 600px);
             height: clamp(300px, 60vw, 600px);
             border-radius: 50%;
-            top: 35%;
+            top: 250%;
             left: 50%;
             transform: translate(-50%, -50%);
             border: 1px solid rgba(0, 242, 255, 0.5);
@@ -247,19 +247,6 @@
             .nav-links a span { display: inline !important; font-size: 0.65rem; } 
             .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px; flex-direction: column; }
             .nav-links svg { width: 14px; height: 14px; }
-        }
-
-        /* Fix for landscape/rotated mobile view */
-        @media (max-height: 500px) and (orientation: landscape) {
-            header {
-                padding-top: 120px; /* Extra space for the navbar in landscape */
-            }
-            .neon-sphere {
-                top: 60%; /* Moves the sphere lower so it doesn't hide under nav */
-            }
-            .title-glitch {
-                font-size: clamp(2rem, 8vw, 4rem); /* Slightly smaller text for landscape */
-            }
         }
     </style>
 </head>
