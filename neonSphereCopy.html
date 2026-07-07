@@ -108,14 +108,14 @@
         /* Hero Section Styling */
         header {
             position: relative;
-            height: 100vh; 
+            min-height: 100vh; 
             display: flex; 
             flex-direction: column;
             justify-content: center; 
             align-items: center; 
             text-align: center;
             overflow: hidden;
-            padding: 0 20px;
+            padding: 100px 20px 40px 20px;
         }
 
         /* HOLOGRAPHIC SPHERE / SEMI-DOME */
@@ -247,6 +247,19 @@
             .nav-links a span { display: inline !important; font-size: 0.65rem; } 
             .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px; flex-direction: column; }
             .nav-links svg { width: 14px; height: 14px; }
+        }
+
+        /* Fix for landscape/rotated mobile view */
+        @media (max-height: 500px) and (orientation: landscape) {
+            header {
+                padding-top: 120px; /* Extra space for the navbar in landscape */
+            }
+            .neon-sphere {
+                top: 60%; /* Moves the sphere lower so it doesn't hide under nav */
+            }
+            .title-glitch {
+                font-size: clamp(2rem, 8vw, 4rem); /* Slightly smaller text for landscape */
+            }
         }
     </style>
 </head>
