@@ -249,13 +249,17 @@
             .nav-links svg { width: 14px; height: 14px; }
         }
 
-        @media (max-height: 550px) {
+        @media (max-height: 550px) and (orientation: landscape) {
             header {
                 /* This pushes the whole group down below the navbar */
-                padding-top: 350px !important; 
+                padding-top: 250px !important; 
         
                 /* This prevents the group from trying to center itself behind the navbar */
                 justify-content: flex-start !important; 
+
+                .neon-sphere {
+                top: 60%;
+                }
             }
         }
     </style>
