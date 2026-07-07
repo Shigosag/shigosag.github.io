@@ -116,7 +116,6 @@
             text-align: center;
             overflow: hidden;
             padding: 100px 20px 40px 20px;
-            padding-top: 60px;
         }
 
         /* HOLOGRAPHIC SPHERE / SEMI-DOME */
@@ -253,18 +252,13 @@
         /* Fix for landscape/rotated mobile view */
         @media (max-height: 500px) and (orientation: landscape) {
             header {
-                /* Pushes the "locked" group down together to clear the nav */
-                padding-top: 80px; 
+                padding-top: 120px; /* Extra space for the navbar in landscape */
             }
             .neon-sphere {
-                /* This makes the sphere size fit the short height of the screen */
-                width: clamp(200px, 65vh, 400px);
-                height: clamp(200px, 65vh, 400px);
-                top: 50%; /* Keeps it perfectly locked to the text center */
+                top: 60%; /* Moves the sphere lower so it doesn't hide under nav */
             }
             .title-glitch {
-                /* Shrinks title slightly so it doesn't overlap the sphere edges */
-                font-size: 2.8rem; 
+                font-size: clamp(2rem, 8vw, 4rem); /* Slightly smaller text for landscape */
             }
         }
     </style>
