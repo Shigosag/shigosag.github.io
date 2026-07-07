@@ -118,6 +118,15 @@
             padding: 100px 20px 40px 20px;
         }
 
+        .hero-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 2;
+            width: 100%;
+        }
+
         /* HOLOGRAPHIC SPHERE / SEMI-DOME */
         .neon-sphere {
             position: absolute;
@@ -132,7 +141,7 @@
             box-shadow: 0 0 100px rgba(0, 242, 255, 0.5), inset 0 0 50px rgba(0, 242, 255, 0.2);
             -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
             mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
-            z-index: 1;
+            z-index: -1;
             pointer-events: none;
         }
 
@@ -250,15 +259,15 @@
         }
 
         /* Fix for landscape/rotated mobile view */
-        @media (max-height: 500px) and (orientation: landscape) {
+        @media (max-height: 600px) {
             header {
-                padding-top: 120px; /* Extra space for the navbar in landscape */
+                padding-top: 120px; /* Ensures space for navbar */
+                justify-content: flex-start; /* Prevents center-clashing on short screens */
             }
             .neon-sphere {
-                top: 60%; /* Moves the sphere lower so it doesn't hide under nav */
-            }
-            .title-glitch {
-                font-size: clamp(2rem, 8vw, 4rem); /* Slightly smaller text for landscape */
+                width: 350px; /* Scale down sphere for landscape so it doesn't overlap navbar */
+                height: 350px;
+                top: 150px; /* Fixed position relative to top of text */
             }
         }
     </style>
