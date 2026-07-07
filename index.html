@@ -309,7 +309,7 @@
     </header>
 
     <section class="container" id="about">
-        <h2 style="margin-bottom: 1rem; color: var(--primary); display: flex; align-items: center; gap: 12px;">
+        <h2 style="margin-bottom: 2.5rem; color: var(--primary); display: flex; align-items: center; gap: 12px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
             ~/About-Me
         </h2>
@@ -356,9 +356,9 @@
     </section>
 
     <section class="container" id="skills">
-        <h2 style="margin-bottom: 1.5rem; color: var(--primary); display: flex; align-items: center; gap: 12px;">
+        <h2 style="margin-bottom: 2.5rem; color: var(--primary); display: flex; align-items: center; gap: 12px;">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20"/><path d="m5 10 3 3 3-3"/><path d="m13 10 3 3 3-3"/><path d="M5 6h14"/></svg>
-            ~/Technical Stack
+            ~/Technical-Stack
         </h2>
         <div class="terminal-card">
             <div class="terminal-header">
@@ -404,21 +404,23 @@
             </div>
 
             <!-- GITHUB STATS CARD -->
+       <div>
+            <h3 style="color: var(--secondary); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                 GitHub Live Stats
+            </h3>
             <div class="terminal-card" style="border-color: var(--secondary);">
                 <div class="terminal-header">
                     <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
-                    <span style="font-size: 0.75rem; color: #888; margin-left: 10px; font-family: monospace; display: flex; align-items: center; gap: 6px;">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
-                        stats.sh
-                    </span>
+                    <span style="font-size: 0.75rem; color: #888; margin-left: 10px; font-family: monospace;">stats.sh</span>
                 </div>
-                <div class="terminal-body">
-                    <h3 style="color: var(--secondary); margin-bottom: 1rem;">GitHub Live Stats</h3>
+                <div class="terminal-body">                    
                     <div id="github-stats-box" style="font-family: monospace; color: var(--text); line-height: 2;">
                         <div id="repos">📦 Public Repos: Loading...</div>
                         <div id="followers">👥 Followers: Loading...</div>
                         <div id="gists">📝 Public Gists: Loading...</div>
                         <a href="https://github.com/Shigosag" target="_blank" class="btn-glow" style="margin-top: 15px; font-size: 0.8rem; padding: 8px 15px; background: var(--secondary); color: #fff;">Visit Profile</a>
+                       </div>
                     </div>
                 </div>
             </div>
