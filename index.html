@@ -248,6 +248,19 @@
             .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px; flex-direction: column; }
             .nav-links svg { width: 14px; height: 14px; }
         }
+
+        /* Fix for landscape/rotated mobile view */
+        @media (max-height: 500px) and (orientation: landscape) {
+            header {
+                padding-top: 120px; /* Extra space for the navbar in landscape */
+            }
+            .neon-sphere {
+                top: 60%; /* Moves the sphere lower so it doesn't hide under nav */
+            }
+            .title-glitch {
+                font-size: clamp(2rem, 8vw, 4rem); /* Slightly smaller text for landscape */
+            }
+        }
     </style>
 </head>
 <body>
