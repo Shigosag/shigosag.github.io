@@ -111,7 +111,7 @@
             min-height: 100vh; 
             display: flex; 
             flex-direction: column;
-            justify-content: flex-start; /* Keeps the gap from the navbar locked */
+            justify-content: center; 
             align-items: center; 
             text-align: center;
             overflow: hidden;
@@ -128,20 +128,11 @@
             z-index: 2;
         }
 
-        /* THE SUBTITLE: Locked growth so it never flips sizes with the title */
-        .text-block p:first-of-type {
+        .text-block {
             display: flex;
             flex-direction: column;
             align-items: center; /* Keeps everything centered horizontally */
-            font-size: clamp(0.7rem, 1.2vw, 1rem); 
-            letter-spacing: 5px;
-            margin-top: 0.5rem; /* CONTROL Gap between the Sphere and the Title group */
-        }
-
-        /* THE DESCRIPTION: Scaled to match the group */
-        .text-block p:last-of-type {
-            font-size: clamp(0.8rem, 1.5vw, 1.2rem);
-            margin-top: 1.5rem;
+            margin-top: 130px; /* CONTROL Gap between the Sphere and the Title group */
         }
       
         /* HOLOGRAPHIC SPHERE / SEMI-DOME */
@@ -192,7 +183,7 @@
         .title-glitch {
             position: relative;
             z-index: 2;
-            font-size: clamp(2.5rem, 7vw, 6rem));
+            font-size: clamp(3rem, 10vw, 6.5rem);
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
@@ -253,13 +244,10 @@
         }
 
         .btn-glow {
-            border-radius: 8px; border: none;
+            padding: 12px 25px; border-radius: 8px; border: none;
             background: var(--primary); color: #000; font-weight: bold;
             cursor: pointer; transition: 0.3s; text-decoration: none;
             display: inline-block; margin-top: 1rem;
-            padding: clamp(8px, 1vw, 15px) clamp(15px, 2vw, 30px);
-            font-size: clamp(0.8rem, 1.2vw, 1rem);
-            margin-top: 2rem;
         }
         .btn-glow:hover { box-shadow: 0 0 20px var(--primary); }
 
