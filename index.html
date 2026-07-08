@@ -183,7 +183,7 @@
         .title-glitch {
             position: relative;
             z-index: 2;
-            font-size: clamp(3rem, 10vw, 6.5rem);
+            font-size: clamp(2.8rem, 8vw, 6.5rem);
             font-weight: 900;
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
@@ -193,6 +193,18 @@
             padding-bottom: 0.1em;
         }
 
+        /* THE SUBTITLE: Now grows with the title */
+        .text-block p:first-of-type {
+            font-size: clamp(0.7rem, 1.2vw, 1rem) !important;
+            letter-spacing: clamp(2px, 0.5vw, 5px) !important;
+        }
+
+        /* THE DESCRIPTION: Now grows in sync */
+        .text-block p:last-of-type {
+            font-size: clamp(0.85rem, 1.8vw, 1.3rem) !important;
+            margin-top: clamp(15px, 2vw, 25px) !important;
+        }
+      
         @keyframes pulse {
             0%, 100% { opacity: 1; filter: drop-shadow(0 0 10px var(--primary)); }
             50% { opacity: 0.8; filter: drop-shadow(0 0 15px var(--secondary)); }
@@ -244,7 +256,9 @@
         }
 
         .btn-glow {
-            padding: 12px 25px; border-radius: 8px; border: none;
+            padding: clamp(10px, 1.2vw, 18px) clamp(20px, 2.5vw, 40px);
+            font-size: clamp(0.8rem, 1.1vw, 1.1rem);
+            border-radius: 8px;
             background: var(--primary); color: #000; font-weight: bold;
             cursor: pointer; transition: 0.3s; text-decoration: none;
             display: inline-block; margin-top: 1rem;
