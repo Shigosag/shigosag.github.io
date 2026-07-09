@@ -141,14 +141,14 @@
             width: clamp(300px, 60vw, 800px);
             height: clamp(300px, 60vw, 800px);
             border-radius: 50%;
-            top: 20%;
+            top: 25%;
             left: 50%;
             transform: translate(-50%, -50%);
             border: 1px solid rgba(0, 242, 255, 0.5);
             background: radial-gradient(circle at center, transparent 30%, rgba(0, 242, 255, 0.05) 60%, rgba(0, 242, 255, 0.15) 100%);
             box-shadow: 0 0 100px rgba(0, 242, 255, 0.5), inset 0 0 50px rgba(0, 242, 255, 0.2);
-            -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 70%);
-            mask-image: linear-gradient(to bottom, black 30%, transparent 70%);
+            -webkit-mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
+            mask-image: linear-gradient(to bottom, black 30%, transparent 75%);
             z-index: 1;
             pointer-events: none;
         }
@@ -304,11 +304,11 @@
             .nav-links svg { width: 14px; height: 14px; }
         }
 
-        /* 1. PHONE ROTATE (Landscape) */
+        /* PHONE ROTATE (Landscape) */
         @media (orientation: landscape) and (max-height: 600px) {
             header {
                 /* Locks a safe gap so the sphere domes below the navbar */
-                padding-top: 120px !important;
+                padding-top: 250px !important;
                 justify-content: flex-start !important;
     }
             .text-block {
@@ -317,11 +317,11 @@
             }
         }
 
-        /* 2. PC MODE */
+        /* PC MODE */
         @media (min-width: 1024px) {
             header {
                 /* Large stretching gap for big monitors */
-                padding-top: clamp(140px, 12vw, 250px) !important;
+                padding-top: 350px !important;
                 justify-content: flex-start !important;
             }
         }
