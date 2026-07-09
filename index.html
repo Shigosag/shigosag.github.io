@@ -138,8 +138,8 @@
         /* HOLOGRAPHIC SPHERE / SEMI-DOME */
         .neon-sphere {
             position: absolute;
-            width: clamp(300px, 65vw, 800px);
-            height: clamp(300px, 65vw, 800px);
+            width: clamp(300px, 60vw, 800px);
+            height: clamp(300px, 60vw, 800px);
             border-radius: 50%;
             top: 20%;
             left: 50%;
@@ -155,10 +155,13 @@
 
         /* GRADIENT DIVIDER */
         .gradient-divider {
-            width: clamp(180px, 25vw, 350px);
+            width: clamp(180px, 30vw, 350px);
             height: 1.5px;
             background: linear-gradient(90deg, transparent, #bc13fe, #00f2ff, #bc13fe, transparent);
-            margin: clamp(10px, 2vw, 25px) auto;
+            margin-top: clamp(10px, 2vw, 25px);
+            margin-bottom: 0; /* 0 to let the description handle the gap below */
+            margin-left: auto;
+            margin-right: auto;
             filter: drop-shadow(0 0 5px #00f2ff);
         }
 
