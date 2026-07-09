@@ -115,7 +115,7 @@
             align-items: center; 
             text-align: center;
             overflow: hidden;
-            padding: 100px 20px 40px 20px; /* Top: 140px, Sides: 20px, Bottom: 40px */
+            padding: clamp(100px, 12vw, 200px) 20px 40px 20px; /* Top: 100px, Sides: 20px, Bottom: 40px */
         }
 
         .hero-container {
@@ -185,7 +185,7 @@
             z-index: 2;
             font-size: clamp(3rem, 10vw, 6.5rem);
             font-weight: 900;
-            margin-bottom: 8px;
+            margin-bottom: clamp(4px, 1vw, 12px); /* Margin grows with screen */
             background: linear-gradient(to right, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -203,7 +203,7 @@
             /* This replicates inline look but adds growth */
             font-size: clamp(0.85rem, 3vw, 1.5rem); 
             letter-spacing: clamp(3px, 0.5vw, 5px);
-            margin-top: 8px;
+            margin-top: clamp(4px, 1vw, 12px); /* Margin grows with screen */
         }
 
         /* Description Styling */
@@ -214,7 +214,7 @@
             position: relative;
             /* Replicates your inline 0.85rem but grows to 1.5rem */
             font-size: clamp(0.85rem, 2.7vw, 1.5rem);
-            margin-top: 20px;
+            margin-top: clamp(15px, 2.5vw, 40px); /* Larger growth for major gap */
         }
 
         .description span { display: block; }
@@ -225,7 +225,7 @@
             gap: 15px; 
             z-index: 2; 
             position: relative;
-            margin-top: 35px;
+            margin-top: clamp(25px, 4vw, 60px); /* Largest growth to keep buttons clear */
         }
       
         @keyframes pulse {
