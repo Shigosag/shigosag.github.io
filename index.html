@@ -303,6 +303,17 @@
             .nav-links a { font-size: 0.7rem; gap: 3px; padding: 4px; flex-direction: column; }
             .nav-links svg { width: 14px; height: 14px; }
         }
+
+        /* Move group down ONLY in Rotate or PC mode */
+        @media (max-height: 600px) or (min-width: 1024px) {
+            header {
+                /* Pushes everything further down from the navbar */
+                padding-top: 150px !important; 
+        
+                /* Forces the group to stay at the 150px gap instead of sliding up */
+                justify-content: flex-start !important; 
+            }
+        }
     </style>
 </head>
 <body>
