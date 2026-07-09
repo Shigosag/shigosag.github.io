@@ -115,7 +115,7 @@
             align-items: center; 
             text-align: center;
             overflow: hidden;
-            padding: clamp(100px, 12vw, 200px) 20px 40px 20px; /* Top: 100px, Sides: 20px, Bottom: 40px */
+            padding: clamp(80px, 12vw, 200px) 20px 40px 20px; /* Top: 100px, Sides: 20px, Bottom: 40px */
         }
 
         .hero-container {
@@ -155,7 +155,7 @@
 
         /* GRADIENT DIVIDER */
         .gradient-divider {
-            width: clamp(180px, 3vw, 350px);
+            width: clamp(180px, 3.5vw, 350px);
             height: 1.5px;
             background: linear-gradient(90deg, transparent, #bc13fe, #00f2ff, #bc13fe, transparent);
             margin-top: clamp(20px, 2vw, 25px);
@@ -311,12 +311,12 @@
         @media (orientation: landscape) and (max-height: 600px) {
             header {
                 /* Locks a safe gap so the sphere domes below the navbar */
-                padding-top: 250px !important;
+                padding-top: 350px !important;
                 justify-content: flex-start !important;
     }
             .text-block {
                 /* Slightly tighter gap for short landscape screens */
-                margin-top: 80px !important; 
+                margin-top: 100px !important; 
             }
         }
 
@@ -324,7 +324,7 @@
         @media (min-width: 1024px) {
             header {
                 /* Large stretching gap for big monitors */
-                padding-top: 350px !important;
+                padding-top: 550px !important;
                 justify-content: flex-start !important;
             }
         }
