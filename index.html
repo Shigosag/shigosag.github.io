@@ -155,7 +155,7 @@
 
         /* GRADIENT DIVIDER */
         .gradient-divider {
-            width: clamp(180px, 30vw, 350px);
+            width: clamp(180px, 2.8vw, 350px);
             height: 1.5px;
             background: linear-gradient(90deg, transparent, #bc13fe, #00f2ff, #bc13fe, transparent);
             margin-top: clamp(20px, 2vw, 25px);
@@ -204,7 +204,7 @@
             z-index: 2;
             position: relative;
             /* This replicates inline look but adds growth */
-            font-size: clamp(0.85rem, 2vw, 1.5rem); 
+            font-size: clamp(0.85rem, 2.5vw, 1.5rem); 
             letter-spacing: clamp(3px, 0.5vw, 5px);
             margin-top: clamp(4px, 1vw, 12px); /* Margin grows with screen */
         }
@@ -283,9 +283,9 @@
 
         .btn-glow {
             padding: clamp(10px, 1.2vw, 15px) clamp(20px, 2.5vw, 30px);
-            font-size: clamp(0.8rem, 1.2vw, 1rem);
+            font-size: clamp(0.9rem, 1.5vw, 2rem);
             margin-top: 35px;
-            border-radius: 8px;
+            border-radius: 8px; border: none;
             background: var(--primary); color: #000; font-weight: bold;
             cursor: pointer; transition: 0.3s; text-decoration: none;
             display: inline-block; margin-top: 1rem;
