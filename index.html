@@ -47,7 +47,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="https://shigosag.github.io/assets/magentaBlack.png">
 
     <style>
-        /* Variables */
+        /* VARIABLES */
         :root {
             --bg: #050505;
             --card-bg: rgba(10, 10, 10, 0.9);
@@ -202,7 +202,7 @@
             padding-bottom: 0.1em;
         }
 
-        /* Subtitle Styling */
+        /* SUBTITLE STYLING */
         .subtitle {
             color: #888;
             font-weight: 500;
@@ -213,7 +213,7 @@
             margin-top: clamp(4px, 1vw, 12px);
         }
 
-        /* Description Styling */
+        /* DESCRIPTION STYLING */
         .description {
             color: #aaa;
             line-height: 1.6;
@@ -225,7 +225,7 @@
 
         .description span { display: block; }
 
-        /* Button Group Styling */
+        /* BUTTON GROUP STYLING */
         .button-group {
             display: flex; 
             gap: 15px; 
@@ -528,12 +528,12 @@
     </footer>
 
     <script>
-        // PARTICLE BACKGROUND
+        /* PARTICLE BACKGROUND */
         const canvas = document.getElementById('particles');
         const ctx = canvas.getContext('2d');
         let particles = [];
 
-        // Initialize/Re-initialize particles based on screen size
+        /* Initialize particles based on screen size */
         function initParticles() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
@@ -549,7 +549,7 @@
             }
         }
 
-        // Particle animation loop
+        /* Particle animation loop */
         function animate() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'rgba(0, 242, 255, 0.3)';
@@ -562,7 +562,7 @@
             requestAnimationFrame(animate);
         }
 
-        // SCROLL SPY
+        /* SCROLL SPY */
         const sections = document.querySelectorAll('section, header');
         const navLi = document.querySelectorAll('.nav-links a');
         
@@ -579,7 +579,7 @@
                 });
             }
 
-            // Updates the URL Hash
+            /* Update the URL Hash */
             if (current) history.replaceState(null, null, `#${current}`);
           
             navLi.forEach(a => {
@@ -590,7 +590,7 @@
             });
         };
 
-        // SMOOTH SCROLLING & FLASH ANIMATION on Click
+        /* Smooth scrolling & flash animation */
         navLi.forEach(link => {
             link.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -610,12 +610,12 @@
             });
         });
 
-        // Event listeners for resizing
+        /* Event listeners for resizing */
         window.addEventListener('resize', initParticles);
         initParticles();
         animate();
 
-        // DARK/LIGHT MODE TOGGLE FUNCTION
+        /* THEME TOGGLE FUNCTION */
         function toggleMode() {
             const html = document.documentElement;
             const isLight = html.classList.toggle('light-mode');
@@ -626,7 +626,7 @@
             btn.innerText = isLight ? '☀️' : '🌙';
         }
 
-        // Fetch GitHub Stats
+        /* FETCH GITHUB STATS */
         const username = 'Shigosag';
         fetch(`https://api.github.com/users/${username}`)
             .then(res => res.json())
