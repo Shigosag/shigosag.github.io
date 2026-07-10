@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- SEO Schema -->
+  <!-- SEO SCHEMA -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -25,7 +25,7 @@
   }
   </script>
   
-  <!-- SEO Metadata -->
+  <!-- SEO -->
   <meta name="description" content="Shigosag | Segun Arulogun Gabriel - Full-Stack Developer Full-Stack Developer building SaaS, dashboards, CLI tools, and automation systems. GitHub portfolio and projects." />
   <meta name="keywords" content="Shigosag, developer portfolio, full stack developer, React, Node.js, GitHub projects" />
   <meta name="author" content="Segun Arulogun Gabriel" />
@@ -139,7 +139,7 @@
             margin-top: clamp(1px, 12vw, 160px); 
         }
       
-        /* HOLOGRAPHIC SPHERE BACKGROUND ELEMENT */
+        /* HOLOGRAPHIC SPHERE / SEMI-DOME */
         .neon-sphere {
             position: absolute;
             width: clamp(300px, 60vw, 800px);
@@ -157,7 +157,7 @@
             pointer-events: none;
         }
 
-        /* VISUAL GRADIENT DIVIDERS */
+        /* GRADIENT DIVIDER */
         .gradient-divider {
             width: clamp(180px, 30vw, 350px);
             height: 1.5px;
@@ -169,7 +169,7 @@
             filter: drop-shadow(0 0 5px #00f2ff);
         }
 
-        /* GLOW ANIMATION */
+        /* GLOW ORB BACKGROUND */
         .glow-orb {
             position: absolute;
             width: 600px;
@@ -202,6 +202,7 @@
             padding-bottom: 0.1em;
         }
 
+        /* Subtitle Styling */
         .subtitle {
             color: #888;
             font-weight: 500;
@@ -212,6 +213,7 @@
             margin-top: clamp(4px, 1vw, 12px);
         }
 
+        /* Description Styling */
         .description {
             color: #aaa;
             line-height: 1.6;
@@ -223,6 +225,7 @@
 
         .description span { display: block; }
 
+        /* Button Group Styling */
         .button-group {
             display: flex; 
             gap: 15px; 
@@ -515,6 +518,7 @@
 
     <!-- FOOTER -->
     <footer>
+        <!-- SEO Description -->
         <p style="max-width: 700px; margin: 0 auto 15px; opacity: 0.7; font-size: 0.85rem;">
             Explore my open-source software projects on GitHub, including POS systems, SaaS dashboards, 
             CLI tools, automation systems, and business management systems built with modern web technologies.
@@ -575,7 +579,7 @@
                 });
             }
 
-            // Updates the URL Hash without jumping the page
+            // Updates the URL Hash
             if (current) history.replaceState(null, null, `#${current}`);
           
             navLi.forEach(a => {
@@ -622,7 +626,7 @@
             btn.innerText = isLight ? '☀️' : '🌙';
         }
 
-        // GitHub API Fetch
+        // Fetch GitHub Stats
         const username = 'Shigosag';
         fetch(`https://api.github.com/users/${username}`)
             .then(res => res.json())
