@@ -247,7 +247,7 @@ header {
 }
 
 .section-title {
-    margin-bottom: 1.2rem; 
+    margin-bottom: 2.5rem; 
     color: var(--primary); 
     display: flex; 
     align-items: center; 
@@ -275,7 +275,7 @@ header {
 .container { 
     max-width: 1100px; 
     margin: 0 auto; 
-    padding: 2.5rem 2rem 5rem 2rem; 
+    padding: 5rem 2rem; 
 }
 
 section, header {
@@ -285,6 +285,20 @@ section, header {
 .grid { 
     display: grid; 
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; 
+}
+
+/* PROJECT SECTION SPECIFIC OVERRIDES */
+#projects.container {
+    padding-top: 1rem;
+}
+#projects .section-title {
+    margin-bottom: 1rem; 
+}
+#projects .terminal-body {
+    padding: 1.2rem; 
+}
+#projects .list-unstyled li {
+    margin-bottom: 8px; 
 }
 
 /* SKILLS TAGS */
