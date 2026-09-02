@@ -289,7 +289,7 @@ section, header {
 
 /* PROJECT SECTION SPECIFIC OVERRIDES */
 #projects.container {
-    padding-top: 1rem;
+    padding-top: 3rem;
 }
 #projects .section-title {
     margin-bottom: 1rem; 
